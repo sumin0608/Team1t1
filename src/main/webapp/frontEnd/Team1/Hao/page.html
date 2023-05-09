@@ -12,11 +12,27 @@
     <link href="../lib/css/styles.css" rel="stylesheet" />
     <link href="../lib/font/bootstrap-icons.min.css" rel="stylesheet" />
 
-    <!-- 引入頁籤icon======================================================= -->
+    <!-- 引入頁籤icon===========    ============================================ -->
     <link rel="icon" type="image/x-icon" href="../lib/img/IX.png" />
     <!-- =========================================== -->
     <style>
+        .navbar-nav li:hover>ul.dropdown-menu{
+            display: block; 
+        }
 
+        .dropdown-submenu{
+           
+        }
+        .dropdown-submenu> .dropdown-menu{
+            top:0%;
+            right:100% ;
+            margin-top: 0px;
+            height: 160px;
+            width: 40px;
+        }
+        .dropdown-menu>li>a:hover:after{
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 
@@ -24,7 +40,7 @@
 
     <!-- 以下導覽列=================================================================================== -->
     <!-- 增加w-100 sticky-top -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 sticky-top navbar-color">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light w-100 sticky-top navbar-color">
         <div class=" container-fluid px-4 px-lg-0 me-4 ">
 
             <!-- 商標===================================================================== -->
@@ -64,7 +80,22 @@
                             </li>
                             <li><a class="dropdown-item" href="#!">商城</a></li>
                             <li><a class="dropdown-item" href="#!">論壇</a></li>
-                            <li><a class="dropdown-item" href="#!">活動</a></li>
+
+
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#!">活動</a>
+                                <ul class="dropdown-menu" >
+                                    <li><a class="dropdown-item" href="#!">籃球</a></li>
+                                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#!">網球</a>
+                                        <ul class="dropdown-menu" >
+                                            <li><a class="dropdown-item" href="#!">女子網球</a></li>
+                                            <li><a class="dropdown-item" href="#!">南子網球</a></li>
+
+                                        </ul>
+                                    
+                                    </li>
+
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <!-- 鈴鐺============================================================= -->
