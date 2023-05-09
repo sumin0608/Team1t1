@@ -15,8 +15,6 @@
 
     <!-- =========================================== -->
     <style>
-        /* ======================================== */
-
         /* 導航列會員頭像 弄成圓形 */
         /* #navbarDropdownMemHead {
             width: 50px;
@@ -25,6 +23,19 @@
         /* height: 50px;
         border-radius: 50%;
         } */
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -232,14 +243,87 @@
     <div class="container main-content">
         <!-- 請在這裡作業 -->
         <div class="row">
-            <div class="col-12">Team1 lets gooooooooooo</div>
+            <!-- 課程介紹區 -->
+            <div class="col-md-9 p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">TRX體能訓練</h1>
+                    <div class="d-flex small text-dark mb-2">
+                        <span>台北市</span>
+                        <span>&nbsp;中山區</span>
+                        <span>&nbsp;南京東路三段219號5樓</span>
+                    </div>
+                    <div class="d-flex small text-dark mb-2">
+                        日期 時間
+                    </div>
+                    <div class="d-flex justify-content-end small text-dark mb-2">
+                        教練名字
+                    </div>
+                    <div class="d-flex small text-dark mb-2">
+                        報名人數
+                    </div>
+                    <p class="col-md-8 fs-4">
+                        挑戰你的身體極限，讓你感受到獨特的全身運動體驗！透過懸吊設備的力量，你能夠提升核心肌肉的穩定性、增強肌肉力量和耐力，同時鍛鍊身體平衡力和靈活性，成為更健康、更自信的自己！</p>
+                    <button class="btn btn-primary btn-lg" type="button">報名課程</button>
+                </div>
+            </div>
+            <!-- 瀏覽紀錄區 -->
+            <aside class="col-3">
+                <div class="card mb-3" style="max-width: 450px;">
+                    <div class="row g-0 align-items-center">
+                        <!-- 圖片 -->
+                        <div class="col-md-4">
+                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." class="img-fluid">
+                        </div>
+                        <!-- 內容 -->
+                        <div class="col-md-8">
+                            <p class="card-tex my-0">瀏覽紀錄1</p>
+                            <p class="card-text"><small class="text-muted">台北市</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 450px;">
+                    <div class="row g-0 align-items-center">
+                        <!-- 圖片 -->
+                        <div class="col-md-4" style="border: solid red;">
+                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." class="img-fluid">
+                        </div>
+                        <!-- 內容 -->
+                        <div class="col-md-8" style="border: solid red;">
+                            <p class="card-tex my-0">瑜珈</p>
+                            <p class="card-text"><small class="text-muted">台北市</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 下排課程推薦 -->
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                    <div class="h-100 p-5 text-white bg-dark rounded-3">
+                        <h2>其他課程</h2>
+                        <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron
+                            look. Then, mix and match with additional component themes and more.</p>
+                        <button class="btn btn-outline-light" type="button">Example button</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2>教練介紹</h2>
+                        <p>Or, keep it light and add a border for some added definition to the boundaries of your
+                            content. Be sure to look under the hood at the source HTML here as we've adjusted the
+                            alignment and sizing of both column's content for equal-height.</p>
+                        <button class="btn btn-outline-secondary" type="button">Example button</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-
+    <br>
 
     <!-- 以下footer================================================================================= -->
-    <footer class="py-5 footer-color fixed-bottom">
+    <footer class="py-5 footer-color ">
         <div class="container">
             <div class="row">
                 <div class="col-3">

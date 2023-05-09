@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ixercise</title>
     <!-- 引入bootstarp跟共用css內容========================================= -->
     <link href="../lib/css/styles.css" rel="stylesheet" />
     <link href="../lib/font/bootstrap-icons.min.css" rel="stylesheet" />
 
-    <!-- 引入頁籤icon======================================================= -->
+    <!-- 引入頁籤icon===========    ============================================ -->
     <link rel="icon" type="image/x-icon" href="../lib/img/IX.png" />
-
     <!-- =========================================== -->
     <style>
-        /* ======================================== */
+        .navbar-nav li:hover>ul.dropdown-menu{
+            display: block; 
+        }
 
-        /* 導航列會員頭像 弄成圓形 */
-        /* #navbarDropdownMemHead {
-            width: 50px;
-            /* max-height: 50px; */
-        /* 忘記為什麼要放 */
-        /* height: 50px;
-        border-radius: 50%;
-        } */
+        .dropdown-submenu{
+           
+        }
+        .dropdown-submenu> .dropdown-menu{
+            top:0%;
+            right:100% ;
+            margin-top: 0px;
+            height: 160px;
+            width: 40px;
+        }
+        .dropdown-menu>li>a:hover:after{
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 
@@ -32,7 +38,7 @@
 
     <!-- 以下導覽列=================================================================================== -->
     <!-- 增加w-100 sticky-top -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 sticky-top navbar-color">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light w-100 sticky-top navbar-color">
         <div class=" container-fluid px-4 px-lg-0 me-4 ">
 
             <!-- 商標===================================================================== -->
@@ -72,7 +78,22 @@
                             </li>
                             <li><a class="dropdown-item" href="#!">商城</a></li>
                             <li><a class="dropdown-item" href="#!">論壇</a></li>
-                            <li><a class="dropdown-item" href="#!">活動</a></li>
+
+
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#!">活動</a>
+                                <ul class="dropdown-menu" >
+                                    <li><a class="dropdown-item" href="#!">籃球</a></li>
+                                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#!">網球</a>
+                                        <ul class="dropdown-menu" >
+                                            <li><a class="dropdown-item" href="#!">女子網球</a></li>
+                                            <li><a class="dropdown-item" href="#!">南子網球</a></li>
+
+                                        </ul>
+                                    
+                                    </li>
+
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <!-- 鈴鐺============================================================= -->
@@ -232,14 +253,20 @@
     <div class="container main-content">
         <!-- 請在這裡作業 -->
         <div class="row">
-            <div class="col-12">Team1 lets gooooooooooo</div>
+            <div class="col-12">
+                <!-- <input type="text" id="search-bar" placeholder="請輸入關鍵字">
+                <div id="search-results"></div> -->
+
+
+
+            </div>
         </div>
     </div>
 
 
 
     <!-- 以下footer================================================================================= -->
-    <footer class="py-5 footer-color fixed-bottom">
+    <footer class="py-5 footer-color">
         <div class="container">
             <div class="row">
                 <div class="col-3">
@@ -252,7 +279,6 @@
                     <a class="d-block" href="">註冊會員</a>
                     <a class="d-block" href="">舉辦活動</a>
                     <a class="d-block" href="">常見問題</a>
-                    <!-- <a class="d-block" href="">活動上架規範</a> -->
                 </div>
                 <div class="col-3">
                     <p class="m-0 text-white h3">主要頁面</p>
@@ -266,12 +292,15 @@
         </div>
     </footer>
     <!-- footer結束================================================================================= -->
-
     <!-- 引入所需函式庫 -->
     <script src="../lib/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/js/popper.min.js"></script>
     <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
     <!-- ================================================================= -->
+
+    <script>
+
+    </script>
 </body>
 
 </html>

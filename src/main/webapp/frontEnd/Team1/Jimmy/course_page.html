@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ixercise</title>
     <!-- 引入bootstarp跟共用css內容========================================= -->
-    <!-- <link href="./css/styles.css" rel="stylesheet" />
-    <link href="./font/bootstrap-icons.min.css" rel="stylesheet" /> -->
     <link href="../lib/css/styles.css" rel="stylesheet" />
     <link href="../lib/font/bootstrap-icons.min.css" rel="stylesheet" />
-
     <!-- 引入頁籤icon======================================================= -->
     <link rel="icon" type="image/x-icon" href="../lib/img/IX.png" />
+    <!-- 引入sidebar========================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/css/style_jimmy_sidebar.css">
+
     <!-- =========================================== -->
     <style>
 
@@ -210,24 +212,122 @@
 
     <!-- 這裡大概是放廣告 -->
     <!-- Header====================================================================================== -->
-    <!-- <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
+    <header class="bg-dark py-5">
+        <!-- <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Shop in style</h1>
                 <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
             </div>
-        </div>
-    </header> -->
+        </div> -->
+    </header>
     <!-- Header====================================================================================== -->
-
-    <!-- main-content -->
-    <div class="container main-content">
-        <!-- 請在這裡作業 -->
-        <div class="row">
-            <div class="col-12">Team1 lets gooooooooooo</div>
+    <!-- 篩選器+天氣 -->
+    <section>
+        <div class="form-group text-right" style="text-align: right; border:solid #0a58ca;">
+            <div id="weatherresult" style="text-align: right; border: solid red;">看天氣區</div>
+            <ul style="display: inline-block;">
+                <li style="list-style: none;">
+                    <select id="citypicker" class="float-right">
+                        <option value="1668341">城市天氣</option>
+                        <option value="1668341">台北</option>
+                        <option value="1668341">新北</option>
+                        <option value="1674199">宜蘭</option>
+                        <option value="1675151">新竹</option>
+                        <option value="1668399">台中</option>
+                        <option value="1668355">台南</option>
+                        <option value="1673820">高雄</option>
+                    </select>
+                </li>
+            </ul>
         </div>
-    </div>
+    </section>
 
+    <!-- sidebar -->
+    <section>
+        <div class="wrapper d-flex align-items-stretch" style="position: fixed;top: 15%;z-index: 1000;">
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h1><a href="#" class="logo">Portfolic <span>Portfolio Agency</span></a></h1>
+                    <ul class="list-unstyled components mb-5">
+                        <li class="active">
+                            <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-user mr-3"></span> About</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-briefcase mr-3"></span> Works</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-suitcase mr-3"></span> Gallery</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- main-content -->
+        <div class="container main-content" style="border: solid red;">
+            <!-- 請在這裡作業 -->
+
+            <!-- 課程列表 -->
+            <div class="row">
+                <div class="col-12 col-md-3" style="border: solid black;">
+                    <div style="border: solid aqua; position: relative;">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                            Sale
+                        </div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <a href="#" style="text-decoration: none;">
+                                    <h5 class="fw-bolder" style="color: red;">TRX體能訓練</h5>
+                                </a>
+                                <div class="d-flex small text-dark mb-2">
+                                    台北市
+                                </div>
+                                <div class="d-flex small text-dark mb-2">
+                                    日期 時間
+                                </div>
+                                <div class="d-flex justify-content-end small text-dark mb-2">
+                                    教練名字
+                                </div>
+                                <!-- Product price-->
+                                <span class="text-muted text-decoration-line-through">$20.00</span>
+                                $18.00
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
+                                            cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3" style="border: solid black;">a</div>
+                <div class="col-12 col-md-3" style="border: solid black;">a</div>
+                <div class="col-12 col-md-3" style="border: solid black;">a</div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- 以下footer================================================================================= -->
@@ -262,6 +362,41 @@
     <script src="../lib/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/js/popper.min.js"></script>
     <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
+    <script src="../lib/js/mainjimmy.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            $("#weatherresult").html(`<p>${(new Date()).toLocaleDateString()}</p>`);
+        });
+        $("#citypicker").change(function () {
+            console.log(this.value);
+            if (!(this.value == null || this.value == "")) {
+                ajaxCallJsonP("https://api.openweathermap.org/data/2.5/weather?", this.value);
+            } else {
+                $("#weatherresults").html("");  // 清空
+            }
+        });
+        function ajaxCallJsonP(url, cityID) {
+            // console.log(url, cityID);
+            var data = $.getJSON(url,
+                {
+                    id: cityID,
+                    appid: "14550c20a1f07f3a8f42b63a1acf4002",
+                    lang: "zh_TW"
+                }).done(function (msg) {
+                    console.log("success!!!");
+                    // $("#weatherresult").html(`<p>${(new Date()).toLocaleDateString()}</p>`);
+                    $("#weatherresult").append(msg.weather[0].description);
+                    $("#weatherresult").append(`<img src='https://openweathermap.org/img/wn/${msg.weather[0].icon}.png'/>`);
+                }
+                ).fail(function (xhr, status, error) {
+                    // 处理请求失败的情况
+                    console.log("error!!!");
+                });
+        };
+    </script>
+
+
     <!-- ================================================================= -->
 </body>
 
