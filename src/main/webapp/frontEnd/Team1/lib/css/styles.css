@@ -27,15 +27,16 @@ div.main-content {
   margin: 0 auto;
   /* background-color: black; */
 }
+/* ====================================================== */
 
 /* 主色 */
 .color-primary {
-  /* background-color: xxx !important; */
+  background-color: rgba(66, 184, 131, 1) !important;
 }
 
 /* 副色 */
 .color-secondary {
-  /* background-color: xxx !important; */
+  background-color: rgba(100, 126, 255, 1);
 }
 
 /* 第三色 */
@@ -45,17 +46,47 @@ div.main-content {
 
 /* 導覽列背景顏色 */
 .navbar-color {
-  /* background-color: #0a58ca !important; */
+  background: linear-gradient(
+    90deg,
+    rgba(66, 184, 131, 1) 0%,
+    rgba(39, 179, 137, 1) 19%,
+    rgba(100, 126, 255, 1) 100%
+  ) !important;
 }
 
 /* body背景顏色 */
 .body-color {
-  /* background-color: red !important; */
+  background: #f8f9fa !important;
 }
 
 /* 頁尾背景顏色 */
 .footer-color {
-  background-color: #212529;
+  background: linear-gradient(
+    90deg,
+    rgba(66, 184, 131, 1) 0%,
+    rgba(39, 179, 137, 1) 19%,
+    rgba(100, 126, 255, 1) 100%
+  ) !important;
+}
+/* 元件調色============================================== */
+
+/* .btn {
+  background: var(--color-primary) !important;
+  background: linear-gradient(#42b883, #35495e) !important;
+  border-color: black;
+  color: black;
+} */
+
+/* 小鈴鐺的紅點 */
+.n-dot {
+  position: absolute;
+  top: 20%;
+  right: 30%;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
 }
 
 /* 其他改動=================================================== */
