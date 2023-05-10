@@ -26,12 +26,12 @@
 
     <!-- 以下導覽列=================================================================================== -->
     <!-- 增加w-100 sticky-top -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 sticky-top navbar-color">
+    <nav class="navbar navbar-expand-lg navbar-light w-100 sticky-top navbar-color">
         <div class=" container-fluid px-4 px-lg-0 me-4 ">
 
             <!-- 商標===================================================================== -->
             <a class="navbar-brand m-0 px-4" href="#!">
-                <img src="../lib/img/IX.png" alt="" width="91" height="60">
+                <img src="../lib/img/IX-nobackground.png" alt="" width="91" height="60">
             </a>
             <!-- Bootstrap 5 的 Navbar Toggler 按鈕，用於在手機和平板等較小螢幕上，點擊按鈕時切換導覽列的展開和收縮狀態。 -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -43,12 +43,104 @@
 
                 <ul class="navbar-nav mb-2 mb-lg-0 w-100">
                     <!-- 搜尋欄=============================================================== -->
-                    <li class="nav-item my-auto">
+                    <!-- <li class="nav-item my-auto">
                         <form class="d-flex">
                             <input class="form-control" type="search" placeholder="找活動..." aria-label="Search">
                             <button class="btn border border-2 border-dark" type="submit">Search</button>
                         </form>
+                    </li> -->
+
+                    <li class="nav-item my-auto">
+                        <form class="d-flex ">
+                            <input class="form-control" id="searchbar" type="search" placeholder="找活動..."
+                                aria-label="Search" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                            </input>
+                            <button class="btn border border-1 border-dark" type="submit">Search</button>
+                        </form>
+
+
+                        <!-- ================================================================== -->
+                        <!-- <div class="collapse" id="collapseExample"> -->
+                        <div class="card card-body top-25 start-25 position-fixed d-none" id="searchcard">
+                            <div class="container-fluid w-100">
+                                <div class="row mb-3">
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option class="disable" selected>頁面 </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
                     </li>
+
+                    <!-- <div class="collapse  d-block" id="collapseExample">
+                    </div> -->
+
+
                     <!-- 辦活動============================================================= -->
                     <li class="nav-item fs-5 ms-auto my-auto">
                         <a class="nav-link active h-100 " aria-current="page" href="#!">辦活動
@@ -71,7 +163,9 @@
                     </li>
                     <!-- 鈴鐺============================================================= -->
                     <!-- 還有一顆填滿的bi-bell-fill -->
+                    <!-- 操控.n-dot來控制有無紅點 -->
                     <li class="nav-item dropdown my-auto">
+                        <div class="n-dot"></div>
                         <svg width="36" height="36" fill="currentColor"
                             class="bi bi-bell dropdown-toggle dropdown-toggle" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" viewBox="0 0 16 16">
@@ -80,91 +174,45 @@
                         </svg>
                         <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
                             <!-- 一條通知====================================================== -->
-                            <li>
-                                <div class="card mb-1" style="width: 500px; height: 80px;">
-                                    <div class="row g-0 overflow-hidden">
-                                        <div class="col-md-2">
-                                            <!-- object-fit:cover 超過容器的圖片部位就消失 -->
+
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
+                                    style="height: 96px; width:600px;">
+                                    <div class="row h-100">
+                                        <div class="col-2 h-100">
                                             <img src="https://picsum.photos/150/200/?random=10"
-                                                class="rounded-start h-100 w-100" style="object-fit:cover" alt="">
+                                                class="rounded-start h-100 w-100" alt="" style="object-fit:cover">
                                         </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body p-0 overflow-hidden" style="max-height: 80%;">
-                                                <!-- <h5 class="card-title">Card title</h5> -->
-                                                <p class="card-text mb-0">Lorem ipsum dolor, sit amet consectetur
-                                                    adipisicing elit. At cum earum quam ut
-                                                </p>
-                                                <p class="card-text"><small class="text-muted">Last updated 3
-                                                        minsago</small></p>
+                                        <div class="col-10">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">List group item heading</h5>
+                                                <small>3 days ago</small>
                                             </div>
+                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                            <small>And some small print.</small>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <!-- ============================================================= -->
-                            <li>
-                                <div class="card mb-1" style="width: 500px; height: 80px;">
-                                    <div class="row g-0 overflow-hidden">
-                                        <div class="col-md-2">
-                                            <!-- object-fit:cover 超過容器的圖片部位就消失 -->
+                                </a>
+                            </div>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
+                                    style="height: 96px; width:600px;">
+                                    <div class="row h-100">
+                                        <div class="col-2 h-100">
                                             <img src="https://picsum.photos/150/200/?random=10"
-                                                class="rounded-start h-100 w-100" style="object-fit:cover" alt="">
+                                                class="rounded-start h-100 w-100" alt="" style="object-fit:cover">
                                         </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body p-0 overflow-hidden" style="max-height: 80%;">
-                                                <!-- <h5 class="card-title">Card title</h5> -->
-                                                <p class="card-text mb-0">Lorem ipsum dolor, sit amet consectetur
-                                                    adipisicing elit. At cum earum quam ut
-                                                </p>
-                                                <p class="card-text"><small class="text-muted">Last updated 3
-                                                        minsago</small></p>
+                                        <div class="col-10">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">List group item heading</h5>
+                                                <small>3 days ago</small>
                                             </div>
+                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                            <small>And some small print.</small>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card mb-1" style="width: 500px; height: 80px;">
-                                    <div class="row g-0 overflow-hidden">
-                                        <div class="col-md-2">
-                                            <!-- object-fit:cover 超過容器的圖片部位就消失 -->
-                                            <img src="https://picsum.photos/150/200/?random=10"
-                                                class="rounded-start h-100 w-100" style="object-fit:cover" alt="">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body p-0 overflow-hidden" style="max-height: 80%;">
-                                                <!-- <h5 class="card-title">Card title</h5> -->
-                                                <p class="card-text mb-0">Lorem ipsum dolor, sit amet consectetur
-                                                    adipisicing elit. At cum earum quam ut
-                                                </p>
-                                                <p class="card-text"><small class="text-muted">Last updated 3
-                                                        minsago</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card mb-1" style="width: 500px; height: 80px;">
-                                    <div class="row g-0 overflow-hidden">
-                                        <div class="col-md-2">
-                                            <!-- object-fit:cover 超過容器的圖片部位就消失 -->
-                                            <img src="https://picsum.photos/150/200/?random=10"
-                                                class="rounded-start h-100 w-100" style="object-fit:cover" alt="">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body p-0 overflow-hidden" style="max-height: 80%;">
-                                                <!-- <h5 class="card-title">Card title</h5> -->
-                                                <p class="card-text mb-0">Lorem ipsum dolor, sit amet consectetur
-                                                    adipisicing elit. At cum earum quam ut
-                                                </p>
-                                                <p class="card-text"><small class="text-muted">Last updated 3
-                                                        minsago</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                                </a>
+                            </div>
                         </ul>
                     </li>
 
@@ -178,7 +226,7 @@
                         <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
 
                             <li>
-                                <img class="dropdown-item overflow-hidden p-0 rounded-circle"
+                                <img class="dropdown-item overflow-hidden p-2 rounded-circle"
                                     src="https://picsum.photos/200/200/?random=10" width="150" height="150">
                             </li>
                             <li>
@@ -212,15 +260,43 @@
 
     <!-- 這裡大概是放廣告 -->
     <!-- Header====================================================================================== -->
-    <header class="bg-dark py-5">
-        <!-- <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+    <!-- <header>
+        <div class="container-fluid p-0">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=10" class="d-block" alt="...">
+                    </div>
+                    <div class="carousel-item w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=11" class="d-block" alt="...">
+                    </div>
+                    <div class="carousel-item w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=12" class="d-block" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-        </div> -->
-    </header>
+        </div>
+    </header> -->
     <!-- Header====================================================================================== -->
+
     <!-- 篩選器+天氣 -->
     <section>
         <div class="form-group text-right" style="text-align: right; border:solid #0a58ca;">

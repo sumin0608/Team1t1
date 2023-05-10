@@ -5,21 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ixercise</title>
     <!-- 引入bootstarp跟共用css內容========================================= -->
     <link href="../lib/css/styles.css" rel="stylesheet" />
     <link href="../lib/font/bootstrap-icons.min.css" rel="stylesheet" />
 
     <!-- 引入頁籤icon======================================================= -->
-    <link rel="icon" type="image/x-icon" href="../lib/img/IX.png" />
-
+    <link rel="icon" type="image/x-icon" href="../lib/img/IX-nobackground.png" />
     <!-- =========================================== -->
     <style>
+        table {
+            border-collapse: collapse;
+        }
 
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
     </style>
 </head>
 
-<body class="body-color">
+<body>
 
     <!-- 以下導覽列=================================================================================== -->
     <!-- 增加w-100 sticky-top -->
@@ -298,14 +306,68 @@
     <div class="container main-content">
         <!-- 請在這裡作業 -->
         <div class="row">
-            <div class="col-12">Team1 lets gooooooooooo</div>
+            <div class="col-12">
+                <h2>教練證照總列表</h2>
+                <br>
+                <div class="row ">
+                    <form class="needs-validation ">
+                        <div class="row ">
+                            <div class="col-sm-3">
+                                <label for="certName" class="form-label">教練證照中文名稱</label>
+                                <input type="text" class="form-control" id="certName" name="certName" placeholder=""
+                                    value="" required>
+                                <div class="invalid-feedback">
+                                    Your username is required.
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="englishCertName" class="form-label">證照英文名:</label>
+                                <input type="text" class="form-control" id="englishCertName" name="englishCertName"
+                                    placeholder="" value="" required>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="abbrName" class="form-label">證照英文縮寫:</label>
+                                <input type="text" class="form-control" id="abbrName" name="abbrName" placeholder=""
+                                    value="" required>
+                            </div>
+                            <div class="col-sm-3 d-flex justify-content-end">
+
+                                <button class="btn" id="insert"
+                                    style="margin-top:10% ; background-color:rgba(66, 184, 131, 1)">新增</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div id="result"></div>
+            <table class="table">
+                <thead style="background-color:rgba(66, 184, 131, 1)">
+                    <tr>
+                        <th>教練證照中文名稱</th>
+                        <th>證照英文名</th>
+                        <th>證照英文縮寫</th>
+                        <th colspan="2">修改</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>张三</td>
+                        <td>25</td>
+                        <td>北京</td>
+                        <td><button id="alterbtn" class="btn btn-primary">修改</button> </td>
+                        <td><button id="deletebtn" class="btn btn-danger">刪除</button></td>
+                    </tr>
+                    <!-- 這裡將用Ajax取得課程列表後再填入 -->
+                </tbody>
+            </table>
+
         </div>
     </div>
 
-
+    <br>
 
     <!-- 以下footer================================================================================= -->
-    <footer class="py-5 footer-color fixed-bottom">
+    <footer class="footer py-5 footer-color bottom-0 ">
         <div class="container">
             <div class="row">
                 <div class="col-3">
@@ -318,7 +380,6 @@
                     <a class="d-block" href="">註冊會員</a>
                     <a class="d-block" href="">舉辦活動</a>
                     <a class="d-block" href="">常見問題</a>
-                    <!-- <a class="d-block" href="">活動上架規範</a> -->
                 </div>
                 <div class="col-3">
                     <p class="m-0 text-white h3">主要頁面</p>
@@ -332,12 +393,17 @@
         </div>
     </footer>
     <!-- footer結束================================================================================= -->
-
     <!-- 引入所需函式庫 -->
     <script src="../lib/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/js/popper.min.js"></script>
     <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
     <!-- ================================================================= -->
+
+    <script>
+        $("#searchbar").on("click", function () {
+            $("#searchcard").toggleClass("d-none");
+        });
+    </script>
 </body>
 
 </html>
