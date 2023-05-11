@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 
 
-    <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <style>
         .test {
@@ -58,24 +58,36 @@
             vertical-align: top;
         }
 
+        /* =================================================  form 表單================================================ */
         textarea {
             max-height: 200px;
         }
 
-        /* 
-        .dropdown-menu-left {
-          
-            right: auto; 
-            position: relative;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        } */
+        /* yellow preview button */
+        .ylbtn {
+            color: #B6B6B6;
+            /* background-color: #ffc107; */
+            background-color: #FFF366;
 
+            border: 1px solid #A7A7A7;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
 
-        /* .dropdown:hover .dropdown-menu {
-            display: block;
-        } */
+        }
+
+        /* form 表單 padding */
+        .formpad {
+            padding-right: calc(var(--bs-gutter-x) * 1);
+            padding-left: calc(var(--bs-gutter-x) * 1);
+        }
+
+        /* form -image upload css  */
+        #image-preview img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* =================================================  form 表單================================================ */
     </style>
 </head>
 
@@ -152,10 +164,10 @@
             <!-- <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> -->
             <!-- <div class="row gx-4 gx-lg-5 row-cols-12 justify-content-center"> -->
 
-            <div class="col -12 row">
-                <div class="row col-1"></div>
+            <div class="col -12 row ">
+                <div class="row col-2"></div>
 
-                <div class="col-10 ">
+                <div class="col-8 formpad " style="background-color: #E9E9E9; ">
 
 
                     <form action="">
@@ -166,9 +178,18 @@
                         <h1>aaa</h1>
                         <h1>aaa</h1>
                         <h1>aaa</h1> -->
-
+                        <br>
                         <h1>創辦活動表單</h1>
                         <hr>
+
+                        <!-- image upload =======================  -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="image">上傳圖像</label>
+                                <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                                <div id="image-preview" class="mt-2"></div>
+                            </div>
+                        </div>
 
                         <!-- First row -->
                         <div class="row">
@@ -359,13 +380,24 @@
                                 </button>
                             </div>
                         </div>
-
+                        <div class="row justify-content-center">
+                            <div class="col-sm-8 ">
+                                <!-- <button type="button" class="btn btn-primary">
+                                    創辦活動
+                                </button> -->
+                                <div class="d-grid gap-2 ">
+                                    <button class="btn btn-primary ylbtn" type="button">預覽</button>
+                                    <!-- <button class="btn btn-primary" type="button">Button</button> -->
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                 </div>
                 </form>
+                <div class="col-2"></div>
             </div>
 
             <!-- </div> -->
-            <div class="col-1"></div>
         </div>
         <!-- Product actions-->
         <!-- <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -396,41 +428,35 @@
             });
         });
 
-        //================= Quantity increment buttons ==============================
-        $(document).ready(function () {
-
-            var quantitiy = 0;
-            $('.quantity-right-plus').click(function (e) {
-
-                // Stop acting like a button
-                e.preventDefault();
-                // Get the field name
-                var quantity = parseInt($('#quantity').val());
-
-                // If is not undefined
-
-                $('#quantity').val(quantity + 1);
-
-
-                // Increment
-
-            });
-
-            $('.quantity-left-minus').click(function (e) {
-                // Stop acting like a button
-                e.preventDefault();
-                // Get the field name
-                var quantity = parseInt($('#quantity').val());
-
-                // If is not undefined
-
-                // Increment
-                if (quantity > 0) {
-                    $('#quantity').val(quantity - 1);
+        //=================image upload js ==============================
+        // 預覽圖像
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#image-preview').html('<img src="' + e.target.result + '" class="img-fluid" alt="Image preview">');
                 }
-            });
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
+        // 刪除圖像
+        function deleteImage() {
+            $('#image').val('');
+            $('#image-preview').html('');
+        }
+
+        // 當選擇圖像時顯示預覽
+        $('#image').change(function () {
+            previewImage(this);
         });
+
+        // 當點擊刪除按鈕時刪除圖像
+        $('#delete-image').click(function () {
+            deleteImage();
+        });
+
+
 
             //=================  ==============================
     </script>

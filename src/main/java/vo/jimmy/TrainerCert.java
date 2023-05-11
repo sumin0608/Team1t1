@@ -1,8 +1,8 @@
-package jimmy.vo;
+package vo.jimmy;
 
 public class TrainerCert {
 
-	private int number;
+	private Integer number;
 	private String certName;
 	private String englishCertName;
 	private String abbrName;

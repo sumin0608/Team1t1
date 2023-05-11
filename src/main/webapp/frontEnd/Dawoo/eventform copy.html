@@ -217,12 +217,14 @@
             <div class="col -12 row ">
                 <div class="row col-2"></div>
 
-                <div class="col-8 formpad " style="background-color: #E9E9E9; ">
+                <div class="col-8 formpad " style="background-color: #E9E9E9; padding-top: 10px;">
 
                     <!-- ================================================form -----submit ================================================== -->
                     <!-- <form action="aaa.html" method="get" class="row g-3 needs-validation" novalidate> -->
                     <form action="http://localhost:8081/THA101G1/EventAddServlet" method="post"
                         enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
+                        <!-- <form action="#" method="post" enctype="multipart/form-data" class="row g-3 needs-validation"
+                        novalidate> -->
 
 
                         <br>
@@ -280,9 +282,9 @@
                         <!-- First row -->
                         <div class="row">
                             <div class="col-sm-12"></div>
-                            <label for="" class="form-label">聚會名稱</label>
-                            <input type="text" name="event_name" placeholder="請輸入聚會名稱..." class="form-control" id=""
-                                required>
+                            <label for="event_name" class="form-label">聚會名稱</label>
+                            <input type="text" id="event_name" name="event_name" placeholder="請輸入聚會名稱..."
+                                class="form-control" value="111" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -297,8 +299,8 @@
 
                             <div class="col-sm-4">
                                 <label for="" class="form-label">聚會類型</label>
-                                <select class="form-select" id="" name="categoryId" aria-label="Default select example"
-                                    required>
+                                <select class="form-select" id="categoryId" name="categoryId"
+                                    aria-label="Default select example" required>
                                     <option selected disabled value="">請選擇..</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -310,7 +312,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">所在城市</label>
-                                <select class="form-select" id="" name="city" aria-label="Default select example"
+                                <select class="form-select" id="city" name="city" aria-label="Default select example"
                                     required>
                                     <option selected disabled value="">請選擇..</option>
                                     <option value="1">One</option>
@@ -323,8 +325,8 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="" class="form-label">所在地區</label>
-                                <select class="form-select" id="" name="district" aria-label="Default select example"
-                                    required>
+                                <select class="form-select" id="district" name="district"
+                                    aria-label="Default select example" required>
                                     <option selected disabled value="">請選擇..</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -357,16 +359,16 @@
                         <div class="row">
                             <div class="col-sm-8">
                                 <label class="form-label">場地名稱</label>
-                                <input type="text" name="location" placeholder="請輸入聚會場地名稱..." class="form-control"
-                                    required>
+                                <input type="text" id="location" name="location" placeholder="請輸入聚會場地名稱..."
+                                    class="form-control" value="111" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <label class="form-label">預計花費</label>
-                                <input type="number" name="price" min="0" placeholder="預計花費" class="form-control"
-                                    required>
+                                <input type="number" id="price" name="price" min="0" placeholder="預計花費"
+                                    class="form-control" value="111" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
@@ -381,8 +383,8 @@
                         <div class="row">
                             <div class="col-sm-12"></div>
                             <label class="form-label">活動地址</label>
-                            <input type="text" name="address" placeholder="活動地址..." class="form-control"
-                                id="location-input" required>
+                            <input type="text" name="address" placeholder="活動地址..." class="form-control" id="address"
+                                value="111" required>
                             <div class="invalid-feedback">
                                 Please choose a username.
                             </div>
@@ -393,7 +395,8 @@
                         <div class="row">
                             <div class="col-sm-5">
                                 <label class="form-label">活動日期</label>
-                                <input type="date" name="eventDate" placeholder="活動日期..." class="form-control" required>
+                                <input type="date" id="eventDate" name="eventDate" placeholder="活動日期..."
+                                    class="form-control" value="2023-05-07" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
@@ -401,8 +404,8 @@
                             </div>
                             <div class="col-sm-5">
                                 <label class="form-label">活動開始時間</label>
-                                <input type="time" name="startTime" placeholder="活動開始時間..." class="form-control"
-                                    required>
+                                <input type="time" id="startTime" name="startTime" placeholder="活動開始時間..."
+                                    class="form-control" value="22:10" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
@@ -421,16 +424,16 @@
                         <div class="row">
                             <div class="col-sm-5">
                                 <label class="form-label">活動日期</label>
-                                <input type="date" name="lastVerifyDate" placeholder="活動日期..." class="form-control"
-                                    required>
+                                <input type="date" id="lastVerifyDate" name="lastVerifyDate" placeholder="活動日期..."
+                                    class="form-control" value="2023-05-07" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
                             </div>
                             <div class="col-sm-5">
                                 <label class="form-label">活動開始時間</label>
-                                <input type="time" name="lastVerifyTime" placeholder="活動開始時間..." class="form-control"
-                                    required>
+                                <input type="time" id="lastVerifyTime" name="lastVerifyTime" placeholder="活動開始時間..."
+                                    class="form-control" value="22:10" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
@@ -462,8 +465,8 @@
                             </div> -->
                             <div class="col-sm-5">
                                 <label class="form-label">聚會人數</label>
-                                <input type="number" name="maxAttendees" placeholder="聚會人數" min="1" max="100"
-                                    class="form-control" required>
+                                <input type="number" id="maxAttendees" name="maxAttendees" placeholder="聚會人數" min="1"
+                                    max="100" class="form-control" value="100" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
@@ -471,7 +474,8 @@
 
                             <div class="col-sm-5">
                                 <label class="form-label">分錢方式</label>
-                                <select class="form-select" name="paymentMethod" aria-label="Default select example">
+                                <select class="form-select" id="paymentMethod" name="paymentMethod"
+                                    aria-label="Default select example" required>
                                     <!-- <option selected>打code</option> -->
                                     <option selected disabled value="">請選擇..</option>
                                     <option value="1">我出錢</option>
@@ -495,9 +499,9 @@
                                 <!-- <input type="" name="" id=""> -->
                                 <!-- </button> -->
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">聚會描述和備註</label>
-                                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1"
-                                        rows="3" required></textarea>
+                                    <label for="description">聚會描述和備註</label>
+                                    <textarea class="form-control" name="description" id="description" rows="3"
+                                        required></textarea>
                                     <div class="invalid-feedback">
                                         Please choose a username.
                                     </div>
@@ -818,62 +822,128 @@
             //==================================== image upload js -gpt =======================================================================================
             //==================================== google map api =======================================================================================
 
-            //==================================== form-input validate =======================================================================================
+            //==================================== form-input validate &&  session storage =======================================================================================
             // Example starter JavaScript for disabling form submissions if there are invalid fields
-            // (function () {
-            //     'use strict'
+            (function () {
+                'use strict'
 
-            //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            //     var forms = document.querySelectorAll('.needs-validation')
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.querySelectorAll('.needs-validation')
 
-            //     // Loop over them and prevent submission
-            //     Array.prototype.slice.call(forms)
-            //         .forEach(function (form) {
-            //             form.addEventListener('submit', function (event) {
-            //                 console.log("wwwwwwww")
-            //                 if (!form.checkValidity()) {
-            //                     event.preventDefault()
-            //                     event.stopPropagation()
-            //                 }
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
 
-            //                 form.classList.add('was-validated')
-            //             }, false)
-            //         })
-            // })()
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                                console.log("!form.checkValidity()");
+                            } else {
+                                console.log("hiii");
+                                // e.preventDefault();
+
+                                var send_data = {};
+
+                                send_data.photo_dropzone = $("#photo-dropzone").val();
+                                send_data.event_name = $("#event_name").val();
+                                send_data.categoryId = $("#categoryId").val();
+                                send_data.city = $("#city").val();
+                                send_data.district = $("#district").val();
+                                send_data.location = $("#location").val();
+                                send_data.address = $("#address").val();
+                                send_data.price = $("#price").val();
+                                send_data.eventDate = $("#eventDate").val();
+                                send_data.startTime = $("#startTime").val();
+                                send_data.lastVerifyDate = $("#lastVerifyDate").val();
+                                send_data.lastVerifyTime = $("#lastVerifyTime").val();
+                                send_data.maxAttendees = $("#maxAttendees").val();
+                                send_data.paymentMethod = $("#paymentMethod").val();
+                                send_data.description = $("#description").val();
+
+                                console.log(send_data);
+
+                                var img_base64_el = document.querySelector(".preview_img");
+                                if (img_base64_el) {
+                                    send_data.img_base64 = img_base64_el.getAttribute("src");
+                                }
+
+                                // 把資料存到session 裡面-先不存到資料庫- 給預覽頁面座使用
+                                sessionStorage.setItem("form_data", JSON.stringify(send_data));
+                            };
+
+                            form.classList.add('was-validated')
+
+                        }, false)
+                    })
+
+
+            })()
 
 
             // =========================== 資料送出 ========================= //
 
 
-            // btn_submit_el.addEventListener("click", function (e) {
+
 
             // $("#btn_submit").on("click", function (e) {
             //     e.preventDefault();
 
             //     var send_data = {};
 
-            //     send_data.p_name = p_name_el.value;
-            //     send_data.p_count = p_count_el.value;
+            //     send_data.photo_dropzone = $("#photo-dropzone").val();
+            //     send_data.event_name = $("#event_name").val();
+            //     send_data.categoryId = $("#categoryId").val();
+            //     send_data.city = $("#city").val();
+            //     send_data.district = $("#district").val();
+            //     send_data.location = $("#location").val();
+            //     send_data.address = $("#address").val();
+            //     send_data.price = $("#price").val();
+            //     send_data.eventDate = $("#eventDate").val();
+            //     send_data.startTime = $("#startTime").val();
+            //     send_data.lastVerifyDate = $("#lastVerifyDate").val();
+            //     send_data.lastVerifyTime = $("#lastVerifyTime").val();
+            //     send_data.maxAttendees = $("#maxAttendees").val();
+            //     send_data.paymentMethod = $("#paymentMethod").val();
+            //     send_data.description = $("#description").val();
+
+            //     console.log(send_data);
 
             //     var img_base64_el = document.querySelector(".preview_img");
             //     if (img_base64_el) {
             //         send_data.img_base64 = img_base64_el.getAttribute("src");
             //     }
 
-            //     if (lng_el.value != "") {
-            //         send_data.position = {
-            //             lng: lng_el.value,
-            //             lat: lat_el.value
-            //         };
-            //     }
+            //     // if (lng_el.value != "") {
+            //     //     send_data.position = {
+            //     //         lng: lng_el.value,
+            //     //         lat: lat_el.value
+            //     //     };
+            //     // }
+            //     // console.log(send_data);
             //     console.log(send_data);
-
             //     sessionStorage.setItem("form_data", JSON.stringify(send_data));
-            //     location.href = "./confirm.html";
+            //     // location.href = "./confirm.html";
+            //     // location.href = "http://localhost:8081/THA101G1/EventAddServlet";
 
             // });
 
-
+            // ====================================
+            // console.log($("#photo-dropzone").val());
+            // console.log($("#event_name").val());
+            // console.log($("#categoryId").val());
+            // console.log($("#city").val());
+            // console.log($("#district").val());
+            // console.log($("#location").val());
+            // console.log($("#address").val());
+            // console.log($("#price").val());
+            // console.log($("#eventDate").val());
+            // console.log($("#startTime").val());
+            // console.log($("#lastVerifyDate").val());
+            // console.log($("#lastVerifyTime").val());
+            // console.log($("#maxAttendees").val());
+            // console.log($("#paymentMethod").val());
+            // console.log($("#description").val());
 
         }); //Load ====
     </script>

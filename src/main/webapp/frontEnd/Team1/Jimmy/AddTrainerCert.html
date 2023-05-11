@@ -24,6 +24,14 @@
             padding: 8px;
             text-align: center;
         }
+
+        .addsuccessoff {
+            display: none;
+        }
+
+        .addsuccesson {
+            display: block;
+        }
     </style>
 </head>
 
@@ -305,41 +313,43 @@
     <!-- main-content -->
     <div class="container main-content">
         <!-- 請在這裡作業 -->
-        <div class="row">
-            <div class="col-12">
-                <h2>教練證照總列表</h2>
-                <br>
-                <div class="row ">
-                    <form class="needs-validation ">
-                        <div class="row ">
-                            <div class="col-sm-3">
-                                <label for="certName" class="form-label">教練證照中文名稱</label>
-                                <input type="text" class="form-control" id="certName" name="certName" placeholder=""
-                                    value="" required>
-                                <div class="invalid-feedback">
-                                    Your username is required.
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <label for="englishCertName" class="form-label">證照英文名:</label>
-                                <input type="text" class="form-control" id="englishCertName" name="englishCertName"
-                                    placeholder="" value="" required>
-                            </div>
-                            <div class="col-sm-3">
-                                <label for="abbrName" class="form-label">證照英文縮寫:</label>
-                                <input type="text" class="form-control" id="abbrName" name="abbrName" placeholder=""
-                                    value="" required>
-                            </div>
-                            <div class="col-sm-3 d-flex justify-content-end">
+        <h2>教練證照總列表</h2>
 
-                                <button class="btn" id="insert"
-                                    style="margin-top:10% ; background-color:rgba(66, 184, 131, 1)">新增</button>
-                            </div>
-                    </form>
+        <br>
+        <form class="needs-validation ">
+            <div class="row ">
+                <!-- <div class="col-12"> -->
+                <div class="col-sm-3">
+                    <label for="certName" class="form-label">教練證照中文名稱</label>
+                    <input type="text" class="form-control" id="certName" name="certName" placeholder="" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        Your username is required.
+                    </div>
                 </div>
+                <div class="col-sm-3">
+                    <label for="englishCertName" class="form-label">證照英文名:</label>
+                    <input type="text" class="form-control" id="englishCertName" name="englishCertName" placeholder=""
+                        value="" required>
+                </div>
+                <div class="col-sm-3">
+                    <label for="abbrName" class="form-label">證照英文縮寫:</label>
+                    <input type="text" class="form-control" id="abbrName" name="abbrName" placeholder="" value=""
+                        required>
+                </div>
+                <div class="col-sm-3 d-flex justify-content-end">
+
+                    <button class="btn" id="addbtn"
+                        style="margin-top:10% ; background-color:rgba(66, 184, 131, 1)">新增</button>
+                </div>
+                <!-- </div> -->
             </div>
-            <br>
-            <div id="result"></div>
+        </form>
+        <br>
+        <div id="addsuccess" class="addsuccessoff" style="text-align: end; color: red; font-weight: bold;">新增成功!
+        </div>
+
+        <div style="margin-top: 1%;">
             <table class="table">
                 <thead style="background-color:rgba(66, 184, 131, 1)">
                     <tr>
@@ -360,15 +370,12 @@
                     <!-- 這裡將用Ajax取得課程列表後再填入 -->
                 </tbody>
             </table>
-
         </div>
     </div>
-
     <br>
-
     <!-- 以下footer================================================================================= -->
     <footer class="footer py-5 footer-color bottom-0 ">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-3">
                     <p class="m-0 text-white h3">客服中心</p>
@@ -393,17 +400,25 @@
         </div>
     </footer>
     <!-- footer結束================================================================================= -->
+
     <!-- 引入所需函式庫 -->
     <script src="../lib/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/js/popper.min.js"></script>
     <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
     <!-- ================================================================= -->
-
     <script>
         $("#searchbar").on("click", function () {
             $("#searchcard").toggleClass("d-none");
         });
+
+        $(document).ready(function () {
+            $("#addbtn").on("click", function () {
+                console.log("ok");
+                $("#addsuccess").toggleClass("addsuccesson");
+            });
+        });
     </script>
+
 </body>
 
 </html>
