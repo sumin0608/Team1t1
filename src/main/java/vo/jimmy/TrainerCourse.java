@@ -1,4 +1,4 @@
-package jimmy.vo;
+package vo.jimmy;
 
 import java.sql.Date;
 import java.sql.Timestamp;
