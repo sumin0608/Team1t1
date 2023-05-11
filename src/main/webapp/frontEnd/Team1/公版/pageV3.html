@@ -49,8 +49,7 @@
                     <li class="nav-item my-auto">
                         <form class="d-flex ">
                             <input class="form-control" id="searchbar" type="search" placeholder="找活動..."
-                                aria-label="Search" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                                aria-expanded="false" aria-controls="collapseExample">
+                                aria-label="Search" role="button" aria-expanded="false" aria-controls="collapseExample">
                             </input>
                             <button class="btn border border-1 border-dark" type="submit">Search</button>
                         </form>
@@ -58,11 +57,10 @@
 
                         <!-- ================================================================== -->
                         <!-- <div class="collapse" id="collapseExample"> -->
-                        <div class="card card-body top-25 start-25 position-fixed d-none" id="searchcard">
+                        <div class="card card-body top-25 start-25 position-fixed d-none " id="searchcard">
                             <div class="container-fluid w-100">
-                                <button type="button" class="btn-close" id="btn-close-search"
-                                    aria-label="Close"></button>
-                                <div class="row mb-3">
+                                <!-- <div > -->
+                                <form action="" class="row mb-3">
                                     <div class="col-3">
                                         <select class="form-select form-select-sm" aria-label="Default select example">
                                             <option selected>頁面 </option>
@@ -95,8 +93,10 @@
                                             <option value="3">Three</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="row mb-3">
+
+                                </form>
+                                <!-- </div> -->
+                                <!-- <div class="row mb-3">
                                     <div class="col-3">
                                         <select class="form-select form-select-sm" aria-label="Default select example">
                                             <option selected>Open </option>
@@ -128,6 +128,16 @@
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
                                         </select>
+                                    </div>
+                                </div> -->
+                                <div class="row">
+                                    <div class="col-7"></div>
+                                    <div class="col-4">
+                                        <button class="btn btn-primary" type="submit"> 查詢 </button>
+                                    </div>
+                                    <div class="col-1">
+                                        <button type="button" class="btn-close " id="btn-close-search"
+                                            aria-label="Close"></button>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +306,7 @@
     <!-- Header====================================================================================== -->
 
     <!-- main-content -->
-    <div class="container main-content">
+    <div class="container main-content py-5">
         <!-- 請在這裡作業 -->
         <div class="row">
             <div class="col-12">
@@ -344,11 +354,11 @@
     <!-- ================================================================= -->
 
     <script>
-        $("#searchbar").on("click", function () {
+        $("#searchbar").focus("click", function () {
             $("#searchcard").toggleClass("d-none");
         });
         $("#btn-close-search").on("click", function () {
-            $("#searchcard").addClass(" d-none");
+            $("#searchcard").addClass("d-none");
         })
     </script>
 </body>
