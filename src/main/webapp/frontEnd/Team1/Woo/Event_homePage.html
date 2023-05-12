@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ixercise</title>
+    <!-- 引入bootstarp跟共用css內容========================================= -->
+    <link href="../lib/css/styles.css" rel="stylesheet" />
+    <link href="../lib/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <!-- 引入頁籤icon======================================================= -->
+    <link rel="icon" type="image/x-icon" href="../lib/img/IX-nobackground.png" />
+    <!-- =========================================== -->
+    <style>
+        /* body, button, input, optgroup, select, textarea {
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+} */
+        /* ==================zzz============== */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        } */
+        /* 
+        a:hover {
+            text-decoration: none;
+        } */
+
+        /* a:active {
+            text-decoration: none;
+        } */
+
+        /* .event_card img.event_pic {
+            max-width: 100%;
+            height: auto;
+        } */
+        /* ================================================ */
+
+        .event_card img.event_pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+
+        .photo {
+            position: relative;
+
+        }
+
+
+        .photo::after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        /* ================================================ */
+        .c-details span {
+            font-weight: 300;
+            font-size: 13px
+        }
+
+        .card {
+            padding: 1.5em .5em .5em;
+            border-radius: 2em;
+            /* box-shadow: 0 5px 10px rgba(0, 0, 0, .2); */
+            overflow: hidden;
+        }
+
+        .event_card:hover {
+            /* box-shadow: 0 0 45px gray; */
+            /* padding: 1.5em .5em .5em;
+            border-radius: 2em; */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+            /* overflow: hidden; */
+        }
+
+        /* .photo img {
+            height: 100%;
+            width: 100%;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <!-- 以下導覽列=================================================================================== -->
+    <!-- 增加w-100 sticky-top -->
+    <nav class="navbar navbar-expand-lg navbar-light w-100 sticky-top navbar-color">
+        <div class=" container-fluid px-4 px-lg-0 me-4 ">
+
+            <!-- 商標===================================================================== -->
+            <a class="navbar-brand m-0 px-4" href="#!">
+                <img src="../lib/img/IX-nobackground.png" alt="" width="91" height="60">
+            </a>
+            <!-- Bootstrap 5 的 Navbar Toggler 按鈕，用於在手機和平板等較小螢幕上，點擊按鈕時切換導覽列的展開和收縮狀態。 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            <!-- 商標的右邊整條============================================================ -->
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+                <ul class="navbar-nav mb-2 mb-lg-0 w-100">
+                    <!-- 搜尋欄=============================================================== -->
+                    <!-- <li class="nav-item my-auto">
+                        <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="找活動..." aria-label="Search">
+                            <button class="btn border border-2 border-dark" type="submit">Search</button>
+                        </form>
+                    </li> -->
+
+                    <li class="nav-item my-auto">
+                        <form class="d-flex ">
+                            <input class="form-control" id="searchbar" type="search" placeholder="找活動..."
+                                aria-label="Search" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                            </input>
+                            <button class="btn border border-1 border-dark" type="submit">Search</button>
+                        </form>
+
+
+                        <!-- ================================================================== -->
+                        <!-- <div class="collapse" id="collapseExample"> -->
+                        <div class="card card-body top-25 start-25 position-fixed d-none" id="searchcard">
+                            <div class="container-fluid w-100">
+                                <div class="row mb-3">
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option class="disable" selected>頁面 </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-3">
+                                        <select class="form-select form-select-sm" aria-label="Default select example">
+                                            <option selected>Open </option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </li>
+
+                    <!-- <div class="collapse  d-block" id="collapseExample">
+                    </div> -->
+
+
+                    <!-- 辦活動============================================================= -->
+                    <li class="nav-item fs-5 ms-auto my-auto">
+                        <a class="nav-link active h-100 " aria-current="page" href="#!">辦活動
+                        </a>
+                    </li>
+                    <!-- 其他主頁  ========================================================== -->
+                    <li class="nav-item fs-5 dropdown my-auto">
+                        <a class="nav-link dropdown-toggle navalable" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">其他主頁
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">首頁</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#!">商城</a></li>
+                            <li><a class="dropdown-item" href="#!">論壇</a></li>
+                            <li><a class="dropdown-item" href="#!">活動</a></li>
+                        </ul>
+                    </li>
+                    <!-- 鈴鐺============================================================= -->
+                    <!-- 還有一顆填滿的bi-bell-fill -->
+                    <!-- 操控.n-dot來控制有無紅點 -->
+                    <li class="nav-item dropdown my-auto">
+                        <div class="n-dot"></div>
+                        <svg width="36" height="36" fill="currentColor"
+                            class="bi bi-bell dropdown-toggle dropdown-toggle" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                        </svg>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                            <!-- 一條通知====================================================== -->
+
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
+                                    style="height: 96px; width:600px;">
+                                    <div class="row h-100">
+                                        <div class="col-2 h-100">
+                                            <img src="https://picsum.photos/150/200/?random=10"
+                                                class="rounded-start h-100 w-100" alt="" style="object-fit:cover">
+                                        </div>
+                                        <div class="col-10">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">List group item heading</h5>
+                                                <small>3 days ago</small>
+                                            </div>
+                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                            <small>And some small print.</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
+                                    style="height: 96px; width:600px;">
+                                    <div class="row h-100">
+                                        <div class="col-2 h-100">
+                                            <img src="https://picsum.photos/150/200/?random=10"
+                                                class="rounded-start h-100 w-100" alt="" style="object-fit:cover">
+                                        </div>
+                                        <div class="col-10">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">List group item heading</h5>
+                                                <small>3 days ago</small>
+                                            </div>
+                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                            <small>And some small print.</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <!-- 會員頭像========================================================= -->
+                    <li class="nav-item dropdown mx-2 my-auto">
+                        <img src="https://picsum.photos/300/200/?random=10"
+                            class="nav-link dropdown-toggle overflow-hidden rounded-circle p-0" id="navbarDropdown"
+                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" width="36"
+                            height="36">
+
+                        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+
+                            <li>
+                                <img class="dropdown-item overflow-hidden p-2 rounded-circle"
+                                    src="https://picsum.photos/200/200/?random=10" width="150" height="150">
+                            </li>
+                            <li>
+                                <span class="dropdown-item-text justify-content-center d-flex fs-5">名字</span>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#!">查看個人資料</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#!">聊天列表</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- 購物車的按鈕============================================================= -->
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark d-flex text-nowrap" type="submit">
+                        <!-- 這個車車改class為bi-cart的話 就會變成空車 -->
+                        <i class="bi-cart-fill me-1"></i>
+                        購物車
+                        <span class="badge bg-dark text-white ms-1 rounded-pill my-auto">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- 導覽列結束=================================================================================== -->
+
+    <!-- 這裡大概是放廣告 -->
+    <!-- Header====================================================================================== -->
+    <header>
+        <!-- <div class="container-fluid p-0">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=10" class="d-block" alt="...">
+                    </div>
+                    <div class="carousel-item w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=11" class="d-block" alt="...">
+                    </div>
+                    <div class="carousel-item w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=12" class="d-block" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div> -->
+
+
+        <div class="container p-0">
+            <div class=" row justify-content-center">
+                <div class="col-8">
+
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000">
+                                <img src="https://picsum.photos/id/1067/600/400" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="https://picsum.photos/id/1067/600/400" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://picsum.photos/id/684/600/400" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header====================================================================================== -->
+    <br>
+    <!-- <hr> -->
+    <!-- main-content -->
+    <div class="container">
+        <!-- 請在這裡作業 --><!-- 請在這裡作業 --><!-- 請在這裡作業 --><!-- 請在這裡作業 --><!-- 請在這裡作業 -->
+        <!-- 請在這裡作業 -->
+        <!-- 請在這裡作業 -->
+        <div class="row justify-content-center">
+            <div class="col-11">
+                <hr>
+                <br>
+                <!-- ======================zzz===================================================================================== -->
+                <div class="row gx-4 gx-lg-3 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
+                    <div class="col mb-5 event_card_container">
+                        <div class="card h-100 p-0 mb-0 event_card event_card">
+                            <!-- EVENT link-->
+                            <a href="">
+                                <!-- EVENT image-->
+                                <div class="photo">
+                                    <img class="card-img-top event_pic"
+                                        src="https://media.istockphoto.com/id/1228962068/photo/colorful-autumn-season-and-mountain-fuji-with-morning-fog-and-red-leaves-at-lake-kawaguchiko.jpg?s=612x612&w=0&k=20&c=fsAoWZPMPv0iqwmGLVWginjP_jk3-tVsBCg4ym-e_Js="
+                                        alt="..." />
+                                </div>
+
+                                <!-- EVENT details-->
+                                <div class="card-body p-2">
+                                    <div class="text-left">
+                                        <!-- EVENT title-->
+                                        <div class="event_title">
+                                            <h5 class="card-title fw-bolder  text-truncate">大里故鄉唱歌、吃飯(現在到9點)</h5>
+                                        </div>
+                                        <!-- EVENT location -> City & Place -->
+                                        <div class="mb-2 event_location">
+                                            <span class="card-text  text-muted event_city">台北市</span>
+                                            <span class="card-text text-muted event_place"> 盈峰河濱河濱足球場</span>
+                                        </div>
+                                        <div class="event_start_time">
+                                            <p class="card-text text-muted">星期四,四月 6日 08:30</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Product actions-->
+
+                                <div class="card-footer p-2  bg-transparent justify-content-between">
+
+                                    <div class="d-flex flex-row align-items-center event_creater">
+                                        <div class="member-icon">
+                                            <img src="https://picsum.photos/300/200/?random=10"
+                                                class="overflow-hidden rounded-circle p-0" id="" href="#" role="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false" width="36" height="36">
+                                        </div>
+
+                                        <div class="col-8 ms-2 c-details">
+                                            <h6 class=" mb-0  fw-bolder text-muted text-truncate"> Dawdddd0000000ddddoo
+                                            </h6>
+                                            <span class=" text-muted">sss</span>
+                                        </div>
+                                        <!-- <div class="col-2"></div> -->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col mb-5 event_card_container">
+                        <div class="card h-100 p-0 mb-0 event_card event_card">
+                            <!-- EVENT link-->
+                            <a href="">
+                                <!-- EVENT image-->
+                                <div class="photo">
+
+                                    <img class="card-img-top event_pic" src="https://picsum.photos/300/200/?random=10"
+                                        alt="..." />
+                                </div>
+
+                                <!-- EVENT details-->
+                                <div class="card-body p-2">
+                                    <div class="text-left">
+                                        <!-- EVENT title-->
+                                        <div class="event_title">
+                                            <h5 class="card-title fw-bolder  text-truncate">大里故鄉唱歌、吃飯(現在到9點)</h5>
+                                        </div>
+                                        <!-- EVENT location -> City & Place -->
+                                        <div class="mb-2 event_location">
+                                            <span class="card-text  text-muted event_city">台北市</span>
+                                            <span class="card-text text-muted event_place"> 盈峰河濱河濱足球場</span>
+                                        </div>
+                                        <div class="event_start_time">
+                                            <p class="card-text text-muted">星期四,四月 6日 08:30</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Product actions-->
+
+                                <div class="card-footer p-2  bg-transparent justify-content-between">
+
+                                    <div class="d-flex flex-row align-items-center event_creater">
+                                        <div class="member-icon">
+                                            <img src="https://picsum.photos/300/200/?random=10"
+                                                class="overflow-hidden rounded-circle p-0" id="" href="#" role="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false" width="36" height="36">
+                                        </div>
+
+                                        <div class="col-8 ms-2 c-details">
+                                            <h6 class=" mb-0  fw-bolder text-muted text-truncate"> Dawdddd0000000ddddoo
+                                            </h6>
+                                            <span class=" text-muted">sss</span>
+                                        </div>
+                                        <!-- <div class="col-2"></div> -->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                                Sale
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Special Item</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill">aaaaa</div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    $18.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
+                                        cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                                Sale
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Sale Item</h5>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$50.00</span>
+                                    $25.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
+                                        cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Popular Item</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
+                                        cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                                Sale
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Sale Item</h5>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$50.00</span>
+                                    $25.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
+                                        cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Fancy Product</h5>
+                                    <!-- Product price-->
+                                    $120.00 - $280.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View
+                                        options</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                                Sale
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Special Item</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    $18.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
+                                        cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Popular Item</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                    <!-- Product price-->
+                                    $40.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
+                                        cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- =========================================================================================================== -->
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 以下footer================================================================================= -->
+    <footer class="footer py-5 footer-color bottom-0 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <p class="m-0 text-white h3">客服中心</p>
+                    <p class="m-0 text-white">Email: Ixercise@gmail.com</p>
+                    <p class="m-0 text-white">Tel: 02-2712-0589</p>
+                </div>
+                <div class="col-3">
+                    <p class="m-0 text-white h3">快速使用</p>
+                    <a class="d-block" href="">註冊會員</a>
+                    <a class="d-block" href="">舉辦活動</a>
+                    <a class="d-block" href="">常見問題</a>
+                </div>
+                <div class="col-3">
+                    <p class="m-0 text-white h3">主要頁面</p>
+                    <a class="d-block" href="">首頁</a>
+                    <a class="d-block" href="">活動</a>
+                    <a class="d-block" href="">論壇</a>
+                    <a class="d-block" href="">商城</a>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer結束================================================================================= -->
+    <!-- 引入所需函式庫 -->
+    <script src="../lib/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/js/popper.min.js"></script>
+    <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
+    <!-- ================================================================= -->
+
+    <script>
+        $("#searchbar").on("click", function () {
+            $("#searchcard").toggleClass("d-none");
+        });
+    </script>
+</body>
+
+</html>
