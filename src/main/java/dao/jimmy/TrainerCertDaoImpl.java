@@ -73,14 +73,22 @@ public class TrainerCertDaoImpl implements TrainerCertDao {
 	
 	// delete
 	@Override
-	public int deleteTrainerCert(String name) {
-		
+	public int deleteTrainerCert(String abbr_name) {
+		String sql = "delete from trainer_cert where abbr_name = ? ";
+		try (Connection connection = dataSource.getConnection();
+		PreparedStatement st = connection.prepareStatement(sql)) {
+			
+			st.setString(1, abbr_name);
+			return st.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return -1;
 	}
 
 	@Override
 	public TrainerCert selectTrainerCertByname(String name) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
