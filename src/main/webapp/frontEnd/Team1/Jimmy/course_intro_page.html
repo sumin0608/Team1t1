@@ -9,10 +9,13 @@
     <!-- 引入bootstarp跟共用css內容========================================= -->
     <link href="../lib/css/styles.css" rel="stylesheet" />
     <link href="../lib/font/bootstrap-icons.min.css" rel="stylesheet" />
-
     <!-- 引入頁籤icon======================================================= -->
     <link rel="icon" type="image/x-icon" href="../lib/img/IX.png" />
-
+    <!--  owl.carousel -->
+    <link rel="stylesheet" href="../lib/owl_carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../lib/owl_carousel/owl.theme.default.min.css" />
+    <!-- jquery -->
+    <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
     <!-- =========================================== -->
     <style>
         .bd-placeholder-img {
@@ -27,6 +30,20 @@
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
+        }
+
+        /* owl.carousel */
+        .owl-theme .item {
+            height: 10rem;
+            background: #4dc7a0;
+            padding: 1rem;
+        }
+
+        .owl-carousel .item h4 {
+            color: #fff;
+            font-weight: 400;
+            font-size: 1.4375rem;
+            margin-top: 0rem;
         }
     </style>
 </head>
@@ -313,7 +330,47 @@
         </div>
     </div>
     <br>
-
+    <br>
+    <!-- owl.carousel -->
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <h4>1</h4>
+        </div>
+        <div class="item">
+            <h4>2</h4>
+        </div>
+        <div class="item">
+            <h4>3</h4>
+        </div>
+        <div class="item">
+            <h4>4</h4>
+        </div>
+        <div class="item">
+            <h4>5</h4>
+        </div>
+        <div class="item">
+            <h4>6</h4>
+        </div>
+        <div class="item">
+            <h4>7</h4>
+        </div>
+        <div class="item">
+            <h4>8</h4>
+        </div>
+        <div class="item">
+            <h4>9</h4>
+        </div>
+        <div class="item">
+            <h4>10</h4>
+        </div>
+        <div class="item">
+            <h4>11</h4>
+        </div>
+        <div class="item">
+            <h4>12</h4>
+        </div>
+    </div>
+    <br>
     <!-- 以下footer================================================================================= -->
     <footer class="py-5 footer-color ">
         <div class="container">
@@ -343,10 +400,32 @@
     </footer>
     <!-- footer結束================================================================================= -->
 
+    <script>
+        $(document).ready(function () {
+            // owl.carousel
+            $(".owl-carousel").owlCarousel({
+                loop: true, // 循環播放
+                margin: 10, // 外距 10px
+                nav: true, // 顯示點點
+                responsive: {
+                    0: {
+                        items: 1 // 螢幕大小為 0~600 顯示 1 個項目
+                    },
+                    600: {
+                        items: 3 // 螢幕大小為 600~1000 顯示 3 個項目
+                    },
+                    1000: {
+                        items: 5 // 螢幕大小為 1000 以上 顯示 5 個項目
+                    }
+                }
+            });
+        });
+    </script>
     <!-- 引入所需函式庫 -->
     <script src="../lib/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/js/popper.min.js"></script>
-    <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
+
+    <script src="../lib/owl_carousel/owl.carousel.min.js"></script>
     <!-- ================================================================= -->
 </body>
 

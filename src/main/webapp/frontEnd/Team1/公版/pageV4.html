@@ -47,92 +47,76 @@
                     </li> -->
 
                     <li class="nav-item my-auto">
-                        <form class="d-flex ">
-                            <input class="form-control" id="searchbar" type="search" placeholder="找活動..."
-                                aria-label="Search" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                                aria-expanded="false" aria-controls="collapseExample">
-                            </input>
-                            <button class="btn border border-1 border-dark" type="submit">Search</button>
-                        </form>
-
-
-                        <!-- ================================================================== -->
-                        <!-- <div class="collapse" id="collapseExample"> -->
-                        <div class="card card-body top-25 start-25 position-fixed d-none" id="searchcard">
-                            <div class="container-fluid w-100">
-                                <button type="button" class="btn-close" id="btn-close-search"
-                                    aria-label="Close"></button>
-                                <div class="row mb-3">
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>頁面 </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
+                        <form class="d-flex row">
+                            <div class="row" style="width: 400px; max-width: 400px;">
+                                <div class="col-8 pe-0">
+                                    <input class="form-control" id="searchbar" type="search" placeholder="搜尋..."
+                                        aria-label="Search" role="button">
+                                    </input>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                <div class="col-4 ps-0">
+                                    <button class="btn border border-1 border-dark" type="submit">Search</button>
+                                </div>
+                            </div>
+
+                            <!-- </form> -->
+                            <!-- ================================================================== -->
+                            <!-- <div class="collapse" id="collapseExample"> -->
+                            <div id="searchcard" class="d-none">
+                                <div class="card card-body w-50 position-fixed">
+                                    <!-- <form action="" class="row mb-0"> -->
+                                    <div class="row mb-0">
+                                        <div class="col-3">
+                                            <!-- <label for=""></label> -->
+                                            <select class="form-select form-select-sm col-3 mb-3"
+                                                aria-label="Default select example">
+                                                <option selected>頁面 </option>
+                                                <option value="1">商城</option>
+                                                <option value="2">論壇</option>
+                                                <option value="3">活動</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-3">
+                                            <select class="form-select form-select-sm"
+                                                aria-label="Default select example">
+                                                <option selected>運動類型 </option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-3">
+                                            <select class="form-select form-select-sm"
+                                                aria-label="Default select example">
+                                                <option selected>各自設定 </option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-3">
+                                            <select class="form-select form-select-sm"
+                                                aria-label="Default select example">
+                                                <option selected>各自設定 </option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="row">
+                                            <!-- <div class="col-9"></div> -->
+                                            <div class="col-12 ">
+                                                <!-- <button class="btn btn-primary" type="submit"> 查詢
+                                            </button> -->
+                                                <button class="btn btn-primary" type="button"
+                                                    id="btn-close-search">關閉</button>
+                                                <button class="btn btn-primary" type="reset"
+                                                    id="btn-close-search">重置</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- </div> -->
                     </li>
 
                     <!-- <div class="collapse  d-block" id="collapseExample">
@@ -157,6 +141,7 @@
                             <li><a class="dropdown-item" href="#!">商城</a></li>
                             <li><a class="dropdown-item" href="#!">論壇</a></li>
                             <li><a class="dropdown-item" href="#!">活動</a></li>
+                            <li><a class="dropdown-item" href="#!">課程</a></li>
                         </ul>
                     </li>
                     <!-- 鈴鐺============================================================= -->
@@ -239,6 +224,12 @@
                             <li>
                                 <a class="dropdown-item" href="#!">聊天列表</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item" href="#!">活動管理</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#!">課程管理</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -296,7 +287,7 @@
     <!-- Header====================================================================================== -->
 
     <!-- main-content -->
-    <div class="container main-content">
+    <div class="container main-content py-5">
         <!-- 請在這裡作業 -->
         <div class="row">
             <div class="col-12">
@@ -344,11 +335,11 @@
     <!-- ================================================================= -->
 
     <script>
-        $("#searchbar").on("click", function () {
-            $("#searchcard").toggleClass("d-none");
+        $("#searchbar").focus("click", function () {
+            $("#searchcard").removeClass("d-none");
         });
         $("#btn-close-search").on("click", function () {
-            $("#searchcard").addClass(" d-none");
+            $("#searchcard").addClass("d-none");
         })
     </script>
 </body>
