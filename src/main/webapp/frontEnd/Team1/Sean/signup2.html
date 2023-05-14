@@ -290,32 +290,98 @@
     <div class="container main-content py-5">
         <!-- 請在這裡作業 -->
         <div class="row justify-content-center">
-            <div class="col-6 p-3 border">
-                <form>
-                    <fieldset>
-                        <legend>立即加入IXercise</legend>
-                        <div class="mb-3">
-                            <label for="disabledTextInput" class="form-label">Disabled input</label>
-                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-                        </div>
-                        <div class="mb-3">
-                            <label for="disabledSelect" class="form-label">Disabled select menu</label>
-                            <select id="disabledSelect" class="form-select">
-                                <option>Disabled select</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-                                <label class="form-check-label" for="disabledFieldsetCheck">
-                                    Can't check this
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </fieldset>
-                </form>
+            <div class="col-5 p-3 border">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <form>
+                            <fieldset>
+                                <legend class="h2">立即加入IXercise</legend>
 
+                                <div class="mb-3">
+                                    <label for="TextInput" class="form-label">電話</label>
+                                    <input type="text" id="TextInput" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="TextInput" class="form-label">密碼</label>
+                                    <input type="text" id="TextInput" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="TextInput" class="form-label">確認密碼</label>
+                                    <input type="text" id="TextInput" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="TextInput" class="form-label">生日</label>
+                                    <input type="date" id="TextInput" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="TextInput" class="form-label">真實姓名</label>
+                                    <input type="text" id="TextInput" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="TextInput" class="form-label">暱稱</label>
+                                    <input type="text" id="TextInput" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label>性別</label>
+                                    <br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            男
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            女
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            不公開
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Select" class="form-label">所在城市</label>
+                                    <select id="Select" class="form-select">
+                                        <option>台北</option>
+                                        <option>新北</option>
+                                        <option>桃園</option>
+                                        <option>台中</option>
+                                        <option>高雄</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="TextInput" class="form-label">地址</label>
+                                    <input type="text" id="TextInput" class="form-control" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FormControlTextarea1" class="form-label">自我介紹</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFileMultiple" class="form-label">會員頭像</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck"
+                                            disabled>
+                                        <label class="form-check-label" for="disabledFieldsetCheck">
+                                            Can't check this
+                                        </label>
+                                    </div>
+                                </div> -->
+                                <button type="submit" class="btn btn-primary">送出</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
 
 
             </div>
