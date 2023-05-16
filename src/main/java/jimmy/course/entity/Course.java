@@ -1,14 +1,34 @@
-package jimmy.course.vo;
+package jimmy.course.entity;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-@Entity
-public class TrainerCourse {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import core.pojo.Core;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@AllArgsConstructor
+
+@Entity
+@Table(name = "course")
+public class Course extends Core {
+
+	private static final long serialVersionUID = -6150184187450772744L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "courseID")
 	private Integer courseId;
-	private Integer memberId;
+	private Integer creator;
 	private String eventName;
 	private Integer expectedPrice;
 	private Date courseStartDate;
@@ -18,18 +38,25 @@ public class TrainerCourse {
 	private Timestamp courseCreationDate;
 	private Integer maximumCapacity;
 	private String description;
-	private byte[] photo;
+	private String photo;
 	private String location;
 	private String city;
 	private String district;
 	private String detailedAddress;
-	private Integer categoryId;
+	@Column(name = "categoryID")
+	private String categoryId;
+	@Column(insertable = false)
 	private Integer currentEnrolment;
+	@Column(insertable = false)
 	private Integer courseStatus;
+	@Column(insertable = false)
 	private Integer paidAdvertising;
+	@Column(insertable = false)
 	private Timestamp paidAdvertisingTime;
 
-//	// Constructor
+	public Course() {
+	}
+
 //	public TrainerCourse(Integer courseId, Integer memberId, String eventName, Integer expectedPrice, Date courseStartDate, Timestamp courseStartTime, Timestamp courseDuration, Timestamp registrationDeadline, Timestamp courseCreationDate, Integer maximumCapacity, String description, byte[] photo, String location, String city, String district, String detailedAddress, Integer categoryId, Integer currentEnrolment, Integer courseStatus, Integer paidAdvertising, Timestamp paidAdvertisingTime) {
 //	        this.courseId = courseId;
 //	        this.memberId = memberId;

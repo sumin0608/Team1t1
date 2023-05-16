@@ -18,25 +18,26 @@ import org.springframework.orm.hibernate5.SpringSessionContext;
 import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-//@EnableTransactionManagement
 //@EnableAspectJAutoProxy
 //@ComponentScan({"web.*.*.impl","core"})
 //@ComponentScan("web.*.*.impl")
+@EnableTransactionManagement
 @Configuration
+//@ComponentScan("jimmy.course.*.*.impl")
 public class AppConfig {
 
 	@Bean
 	public DataSource dataSource() throws IllegalArgumentException, NamingException {
 		JndiObjectFactoryBean bean = new JndiObjectFactoryBean();
 		bean.setResourceRef(true);
-		bean.setJndiName("jdbc/javaFramework");
+		bean.setJndiName("jdbc/trainer_course");
 		bean.afterPropertiesSet();
 		return (DataSource) bean.getObject();
 	}
 
 	@Bean
 	public SessionFactory sessionFactory() throws IllegalArgumentException, NamingException {
-		return new LocalSessionFactoryBuilder(dataSource()).scanPackages("web.*.entity")
+		return new LocalSessionFactoryBuilder(dataSource()).scanPackages("course.*.entity")
 				.addProperties(getHibernateProperties()).buildSessionFactory();
 	}
 
@@ -49,9 +50,9 @@ public class AppConfig {
 		return properties;
 	}
 
-//	@Bean
-//	public TransactionManager transactionManager() throws IllegalArgumentException, NamingException {
-//		return new HibernateTransactionManager(sessionFactory());
-//	}
-//	
+	@Bean
+	public TransactionManager transactionManager() throws IllegalArgumentException, NamingException {
+		return new HibernateTransactionManager(sessionFactory());
+	}
+	
 }
