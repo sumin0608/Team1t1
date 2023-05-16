@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //@ComponentScan("web.*.*.impl")
 @EnableTransactionManagement
 @Configuration
-//@ComponentScan("jimmy.course.*.*.impl")
+@ComponentScan("jimmy.course.*.*.impl")
 public class AppConfig {
 
 	@Bean
@@ -37,7 +37,7 @@ public class AppConfig {
 
 	@Bean
 	public SessionFactory sessionFactory() throws IllegalArgumentException, NamingException {
-		return new LocalSessionFactoryBuilder(dataSource()).scanPackages("course.*.entity")
+		return new LocalSessionFactoryBuilder(dataSource()).scanPackages("jimmy.*.entity")
 				.addProperties(getHibernateProperties()).buildSessionFactory();
 	}
 
