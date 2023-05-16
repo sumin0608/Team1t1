@@ -1,5 +1,5 @@
 package jimmy.course.dao;
 
-public class CourseDao {
+public interface CourseDao {
 
 }
