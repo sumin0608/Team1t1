@@ -1,13 +1,26 @@
-package vo.jimmy;
+package jimmy.trainercert.vo;
 
-public class TrainerCert {
+import core.pojo.Core;
 
+public class TrainerCert extends Core{
+
+	private static final long serialVersionUID = 1L;
 	private Integer number;
 	private String certName;
 	private String englishCertName;
 	private String abbrName;
 
 	// Constructor
+	public TrainerCert() {
+		
+	}
+	
+	public TrainerCert(String certName, String englishCertName, String abbrName) {
+		this.certName = certName;
+		this.englishCertName = englishCertName;
+		this.abbrName = abbrName;
+	}
+	
 	public TrainerCert(int number, String certName, String englishCertName, String abbrName) {
 		this.number = number;
 		this.certName = certName;
@@ -15,11 +28,6 @@ public class TrainerCert {
 		this.abbrName = abbrName;
 	}
 
-	public TrainerCert(String certName, String englishCertName, String abbrName) {
-		this.certName = certName;
-		this.englishCertName = englishCertName;
-		this.abbrName = abbrName;
-	}
 
 	public int getNumber() {
 		return number;

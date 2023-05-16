@@ -5,45 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ixercise</title>
     <!-- 引入bootstarp跟共用css內容========================================= -->
     <link href="../lib/css/styles.css" rel="stylesheet" />
     <link href="../lib/font/bootstrap-icons.min.css" rel="stylesheet" />
+
     <!-- 引入頁籤icon======================================================= -->
-    <link rel="icon" type="image/x-icon" href="../lib/img/IX.png" />
-    <!--  owl.carousel -->
-    <link rel="stylesheet" href="../lib/owl_carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../lib/owl_carousel/owl.theme.default.min.css" />
-    <!-- jquery -->
-    <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../lib/img/IX-nobackground.png" />
     <!-- =========================================== -->
     <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
+        table {
+            border-collapse: collapse;
         }
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
         }
 
-        /* owl.carousel */
-        .owl-theme .item {
-            height: 10rem;
-            background: #4dc7a0;
-            padding: 1rem;
-        }
-
-        .owl-carousel .item h4 {
-            color: #fff;
-            font-weight: 400;
-            font-size: 1.4375rem;
-            margin-top: 0rem;
+        tr.-none {
+            display: none;
         }
     </style>
 </head>
@@ -278,163 +261,134 @@
     <!-- 導覽列結束=================================================================================== -->
 
     <!-- 這裡大概是放廣告 -->
-    <!-- <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+    <!-- <header>
+        <div class="container-fluid p-0">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=10" class="d-block" alt="...">
+                    </div>
+                    <div class="carousel-item w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=11" class="d-block" alt="...">
+                    </div>
+                    <div class="carousel-item w-100 object-fit-cover">
+                        <img src="https://picsum.photos/1920/300/?random=12" class="d-block" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </header> -->
-    <!-- Header====================================================================================== -->
+
 
     <!-- main-content -->
     <div class="container main-content">
         <!-- 請在這裡作業 -->
-        <div class="row">
-            <!-- 課程介紹區 -->
-            <div class="col-md-9 p-5 mb-4 bg-light rounded-3" style="border: solid green;">
-                <div class="container-fluid py-5" style="border: solid red;">
-                    <h1 class="display-5 fw-bold">TRX體能訓練</h1>
-                    <div class="photo">
-                        <img class="card-img-top event_pic"
-                            src="https://media.istockphoto.com/id/1228962068/photo/colorful-autumn-season-and-mountain-fuji-with-morning-fog-and-red-leaves-at-lake-kawaguchiko.jpg?s=612x612&w=0&k=20&c=fsAoWZPMPv0iqwmGLVWginjP_jk3-tVsBCg4ym-e_Js="
-                            alt="..." />
-                    </div>
-                    <div class="d-flex small text-dark mb-2">
-                        <span>台北市</span>
-                        <span>&nbsp;中山區</span>
-                        <span>&nbsp;南京東路三段219號5樓</span>
-                    </div>
-                    <div class="d-flex small text-dark mb-2">
-                        日期 時間
-                    </div>
-                    <div class="d-flex justify-content-end small text-dark mb-2">
-                        教練名字
-                    </div>
-                    <div class="d-flex small text-dark mb-2">
-                        報名人數
-                    </div>
-                    <p class="col-md-8 fs-4">
-                        挑戰你的身體極限，讓你感受到獨特的全身運動體驗！透過懸吊設備的力量，你能夠提升核心肌肉的穩定性、增強肌肉力量和耐力，同時鍛鍊身體平衡力和靈活性，成為更健康、更自信的自己！</p>
-                    <button class="btn btn-primary btn-lg" type="button">報名課程</button>
+        <h2>教練證照總列表</h2>
+        <br>
+        <form class="needs-validation ">
+            <div class="row ">
+                <!-- <div class="col-12"> -->
+                <div class="col-sm-3">
+                    <label for="certName" class="form-label">證照中文名:</label>
+                    <input type="text" class="form-control af " id="certName" name="certName" placeholder="" required>
+                    <!-- <div class="invalid-feedback">
+                        Your username is required.
+                    </div> -->
                 </div>
+                <div class="col-sm-3">
+                    <label for="englishCertName" class="form-label">證照英文名:</label>
+                    <input type="text" class="form-control af " id="englishCertName" name="englishCertName"
+                        placeholder="" required>
+                </div>
+                <div class="col-sm-3">
+                    <label for="abbrName" class="form-label">證照英文縮寫:</label>
+                    <input type="text" class="form-control af " id="abbrName" name="abbrName" placeholder="" required>
+                </div>
+                <div class="col-sm-3 d-flex justify-content-end">
+                    <button class="btn" id="addbtn"
+                        style="margin-top:10% ; background-color:rgba(66, 184, 131, 1)">新增</button>
+                </div>
+                <!-- </div> -->
             </div>
-            <!-- 瀏覽紀錄區 預計最多顯示5筆-->
-            <aside class="col-3" style="border: solid green;">
-                <div class="card mb-3" style="max-width: 450px;">
-                    <div class="row g-0 align-items-center">
-                        <!-- 圖片 -->
-                        <div class="col-md-4">
-                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." class="img-fluid">
-                        </div>
-                        <!-- 內容 -->
-                        <div class="col-md-8">
-                            <p class="card-tex my-0">瀏覽紀錄1</p>
-                            <p class="card-text"><small class="text-muted">新北市</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="card mb-3" style="max-width: 450px;">
-                    <div class="row g-0 align-items-center">
-                        <!-- 圖片 -->
-                        <div class="col-md-4" style="border: solid red;">
-                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." class="img-fluid">
-                        </div>
-                        <!-- 內容 -->
-                        <div class="col-md-8" style="border: solid red;">
-                            <p class="card-tex my-0">瑜珈</p>
-                            <p class="card-text"><small class="text-muted">台北市</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="card mb-3" style="max-width: 450px;">
-                    <div class="row g-0 align-items-center">
-                        <!-- 圖片 -->
-                        <div class="col-md-4" style="border: solid red;">
-                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." class="img-fluid">
-                        </div>
-                        <!-- 內容 -->
-                        <div class="col-md-8" style="border: solid red;">
-                            <p class="card-tex my-0">棒球</p>
-                            <p class="card-text"><small class="text-muted">台北市</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- 下排課程推薦 -->
-            <div class="row align-items-md-stretch" style="border: solid green;">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 text-white bg-dark rounded-3">
-                        <h2>其他課程(同個教練)</h2>
-                        <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron
-                            look. Then, mix and match with additional component themes and more.</p>
-                        <button class="btn btn-outline-light" type="button">更多資料</button>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                        <h2>教練介紹</h2>
-                        <p>Or, keep it light and add a border for some added definition to the boundaries of your
-                            content. Be sure to look under the hood at the source HTML here as we've adjusted the
-                            alignment and sizing of both column's content for equal-height.</p>
-                        <button class="btn btn-outline-secondary" type="button">更多資料</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </form>
+        <br>
+        <!-- <div id="addsuccess" class="addsuccessoff" style="text-align: end; color: red; font-weight: bold;">kk! -->
     </div>
-    <br>
-    <br>
-    <!-- owl.carousel -->
-    <div class="owl-carousel owl-theme">
-        <div class="item">
-            <h4>1</h4>
+
+    <div style="margin-top: 1%;">
+        <div>
+            <button class="btn" id="getall" style="background-color:rgba(66, 184, 131, 1)">查看全部</button>
+            <button class="btn" id="getsingle" style="background-color:#bdbebd;margin-left: 2%;">搜尋:</button>
+            <div style="display: inline-block;">
+                <input class="form-control" id="searchname" type="search" placeholder="搜尋證照中文名..." aria-label="Search"
+                    role="button">
+                </input>
+            </div>
+            <div style="display: inline-block; margin-left: 2%;"><span>狀態:</span></div>
+            <div id="result" style="display: inline-block; margin-left: 2%;color: red;"></div>
         </div>
-        <div class="item">
-            <h4>2</h4>
-        </div>
-        <div class="item">
-            <h4>3</h4>
-        </div>
-        <div class="item">
-            <h4>4</h4>
-        </div>
-        <div class="item">
-            <h4>5</h4>
-        </div>
-        <div class="item">
-            <h4>6</h4>
-        </div>
-        <div class="item">
-            <h4>7</h4>
-        </div>
-        <div class="item">
-            <h4>8</h4>
-        </div>
-        <div class="item">
-            <h4>9</h4>
-        </div>
-        <div class="item">
-            <h4>10</h4>
-        </div>
-        <div class="item">
-            <h4>11</h4>
-        </div>
-        <div class="item">
-            <h4>12</h4>
-        </div>
+        <br>
+        <table id="courseList0" class="table">
+            <thead style="background-color:rgba(66, 184, 131, 1)">
+                <tr>
+                    <th>編號</th>
+                    <th>證照中文名</th>
+                    <th>證照英文名</th>
+                    <th>證照英文縮寫</th>
+                    <th colspan="2">修改</th>
+                </tr>
+                <tr style="color: red;background-color:#bdbebd">
+                    <td>number</td>
+                    <td>certName</td>
+                    <td>englishCertName</td>
+                    <td>abbrName</td>
+                    <td colspan="2"></td>
+                </tr>
+            </thead>
+            <!-- 這裡將用Ajax取得課程列表後再填入 -->
+            <tbody id="courseList">
+                <tr>
+                    <td class="number_td">n</td>
+                    <td class="certName_td">EX:张三</td>
+                    <td class="englishCertName_td">25</td>
+                    <td class="abbrName_td">北京</td>
+                    <td><button class="btn btn-primary alterbtn">修改</button></td>
+                    <td><button class="btn btn-danger deletebtn">刪除</button></td>
+                </tr>
+                <tr class="table_update -none">
+                    <td class="number_update">${certItem.number}</td>
+                    <td class="certName_update"><input type='text' class='task_update' placeholder='請輸入更新…' /></td>
+                    <td class="englishCertName_update"><input type='text' class='task_update' placeholder='請輸入更新…' />
+                    </td>
+                    <td class="abbrName_update"><input type='text' class='task_update' placeholder='請輸入更新…' /></td>
+                    <td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
     <br>
     <!-- 以下footer================================================================================= -->
-    <footer class="footer py-5 footer-color">
-        <div class="container">
+    <footer class="footer py-5 footer-color bottom-0 ">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-3">
                     <p class="m-0 text-white h3">客服中心</p>
@@ -460,31 +414,10 @@
     </footer>
     <!-- footer結束================================================================================= -->
 
-    <script>
-        $(document).ready(function () {
-            // owl.carousel
-            $(".owl-carousel").owlCarousel({
-                loop: true, // 循環播放
-                margin: 10, // 外距 10px
-                nav: true, // 顯示點點
-                responsive: {
-                    0: {
-                        items: 1 // 螢幕大小為 0~600 顯示 1 個項目
-                    },
-                    600: {
-                        items: 3 // 螢幕大小為 600~1000 顯示 3 個項目
-                    },
-                    1000: {
-                        items: 5 // 螢幕大小為 1000 以上 顯示 5 個項目
-                    }
-                }
-            });
-        });
-    </script>
     <!-- 引入所需函式庫 -->
     <script src="../lib/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/js/popper.min.js"></script>
-    <script src="../lib/owl_carousel/owl.carousel.min.js"></script>
+    <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
     <!-- ================================================================= -->
     <script>
         $("#searchbar").focus("click", function () {
@@ -493,7 +426,201 @@
         $("#btn-close-search").on("click", function () {
             $("#searchcard").addClass("d-none");
         })
+
+        $(document).ready(function () {
+            $("#addbtn").on("click", function (e) {
+                e.preventDefault(); // 防止表單提交
+                var certName = $("#certName").val();
+                var englishCertName = $("#englishCertName").val();
+                var abbrName = $("#abbrName").val();
+                console.log(certName);
+                $.ajax({
+                    url: "/Teamt1/addTrainerCertServlet",
+                    type: "POST",
+                    data: {
+                        certName: certName,
+                        englishCertName: englishCertName,
+                        abbrName: abbrName
+                    },
+                    success: function (resp) {
+                        console.log("resp>>" + resp);
+                        $("#result").empty();
+                        $("#result").append(resp);
+                        $(".af").val("");
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error: " + xhr.responseText);
+                    }
+                });
+            });
+
+            $("#getall").on("click", function (event) {
+                event.preventDefault(); // 防止表單提交
+                // 使用Ajax取得課程列表
+                $.ajax({
+                    url: "/Teamt1/getAllTrainerCertServlet",
+                    type: "GET",
+                    dataType: "json",
+                    //dataType: "text",
+                    success: function (resp) {
+                        console.log("resp>>" + resp);
+
+                        let tableData = '';
+                        for (let i = 0; i < resp.length; i++) {
+                            let certItem = resp[i];
+                            tableData += `<tr class="table_tr">`;
+                            tableData += `<td class="number_td">${certItem.number}</td>`;
+                            tableData += `<td class="certName_td"> ${certItem.certName}</td >`;
+                            tableData += `<td class="englishCertName_td"> ${certItem.englishCertName}</td > `;
+                            tableData += `<td class="abbrName_td"> ${certItem.abbrName}</td > `;
+                            tableData += `<td><button class="btn btn-primary alterbtn">修改</button></td > `;
+                            tableData += `<td><button class="btn btn-danger deletebtn">刪除</button></td > `;
+                            tableData += `</tr>`;
+                            tableData += `<tr class="table_update -none">`;
+                            tableData += `<td class="number_update">${certItem.number}</td>`;
+                            tableData += `<td><input type='text' class='certName_updatet' placeholder='請輸入更新…'/></td > `;
+                            tableData += `<td><input type='text' class='englishCertName_updatet' placeholder='請輸入更新…'/></td > `;
+                            tableData += `<td class="abbrName_update"><input type='text' class='abbrName_updatet' placeholder='請輸入更新…'/></td > `;
+                            tableData += `<td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td > `;
+                            tableData += `</tr>`;
+                        }
+                        $("#courseList").empty().append(tableData);
+                        $("#result").empty();
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error: " + xhr.responseText);
+                    }
+                });
+            });
+
+            $(document).on("click", ".deletebtn", function () {
+                console.log(this);
+                var number = $(this).closest('tr').find('.number_td').text();
+                var certName = $(this).closest('tr').find('.certName_td').text();
+                var englishCertName = $(this).closest('tr').find(".englishCertName_td").text();
+                var abbrName = $(this).closest('tr').find(".abbrName_td").text();
+                console.log(number);
+                console.log(certName);
+                console.log(englishCertName);
+                console.log(abbrName);
+
+                $.ajax({
+                    url: "/Teamt1/deleteTrainerCertServlet",
+                    type: "POST",
+                    data: {
+                        number: number,
+                        certName: certName,
+                        englishCertName: englishCertName,
+                        abbrName: abbrName
+                    },
+                    success: function (resp) {
+                        console.log("resp>>" + resp);
+                        $("#result").empty().append(resp);
+                        alert("刪除成功請刷新頁面")
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error: " + xhr.responseText);
+                    }
+                });
+            });
+
+            $(document).on("click", ".alterbtn", function () {
+                console.log(this);
+                var tableUpdateRow = $(this).closest("tr").next("tr.table_update");
+                console.log("隱藏欄位" + tableUpdateRow);
+                if (tableUpdateRow.hasClass('-none')) {
+                    tableUpdateRow.removeClass('-none');
+                } else {
+                    tableUpdateRow.addClass('-none');
+                }
+                // 进一步操作 tableUpdateRow 中的元素
+                $(document).on("click", ".sendbtn", function () {
+                    console.log(this);
+                    var number = $(this).closest('tr').find('.number_update').text();
+                    var certName = $(this).closest('tr').find('.certName_updatet').val();
+                    var englishCertName = $(this).closest('tr').find(".englishCertName_updatet").val();
+                    var abbrName = $(this).closest('tr').find(".abbrName_updatet").val();
+                    console.log(number);
+                    console.log(certName);
+                    console.log(englishCertName);
+                    console.log(abbrName);
+                    $.ajax({
+                        url: "/Teamt1/updaterainerCertServlet",
+                        type: "POST",
+                        data: {
+                            number: number,
+                            certName: certName,
+                            englishCertName: englishCertName,
+                            abbrName: abbrName
+                        },
+                        success: function (resp) {
+                            console.log("resp>>" + resp);
+                            $("#result").empty().append(resp);
+                            //更新後隱藏欄位
+                            var tableDeleteRow = $(this).closest("tr");
+                            $("tableDeleteRow").addClass("-none");
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error: " + xhr.responseText);
+                        }
+                    });
+                    if (tableUpdateRow.hasClass('-none')) {
+                        tableUpdateRow.removeClass('-none');
+                        // return;
+                    } else {
+                        tableUpdateRow.addClass('-none');
+                    }
+                });
+            });
+
+            $("#getsingle").on('click', function (e) {
+                e.preventDefault();
+                let word = $("#searchname").val();
+                console.log("關鍵字=" + word);
+                $.ajax({
+                    url: "/Teamt1/oneTrainerCertServlet",
+                    type: "GET",
+                    data: { certName: word },
+                    success: function (resp) {
+                        console.log("resp>>" + resp);
+                        const tostring = JSON.stringify(resp.message);//要轉字串才能
+                        const tostring4 = JSON.stringify(resp.successful);//要轉字串才能
+                        console.log("message>>" + tostring);
+                        console.log("message4>>" + tostring4);
+                        $("#result").empty().append(tostring);
+                        let tableData = '';
+                        let certItem = resp;
+                        if (tostring4 === true) {
+                            tableData += `<tr class="table_tr">`;
+                            tableData += `<td class="number_td">${certItem.number}</td>`;
+                            tableData += `<td class="certName_td"> ${certItem.certName}</td >`;
+                            tableData += `<td class="englishCertName_td"> ${certItem.englishCertName}</td > `;
+                            tableData += `<td class="abbrName_td"> ${certItem.abbrName}</td > `;
+                            tableData += `<td><button class="btn btn-primary alterbtn">修改</button></td > `;
+                            tableData += `<td><button class="btn btn-danger deletebtn">刪除</button></td > `;
+                            tableData += `</tr>`;
+                            tableData += `<tr class="table_update -none">`;
+                            tableData += `<td class="number_update">${certItem.number}</td>`;
+                            tableData += `<td><input type='text' class='certName_updatet' placeholder='請輸入更新…'/></td > `;
+                            tableData += `<td><input type='text' class='englishCertName_updatet' placeholder='請輸入更新…'/></td > `;
+                            tableData += `<td class="abbrName_update"><input type='text' class='abbrName_updatet' placeholder='請輸入更新…'/></td > `;
+                            tableData += `<td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td > `;
+                            tableData += `</tr>`;
+                        }
+                        else {
+                            tableData += `<tr><td class=">查無此名稱</td ></tr>`
+                        }
+                        $("#courseList").empty().append(tableData);
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error: " + xhr.responseText);
+                    }
+                });
+            });
+
+        });
     </script>
+
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-package vo.jimmy;
+package jimmy.comment.vo;
 
 import java.sql.Timestamp;
 

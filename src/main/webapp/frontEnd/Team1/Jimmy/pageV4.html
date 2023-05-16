@@ -14,24 +14,7 @@
     <link rel="icon" type="image/x-icon" href="../lib/img/IX-nobackground.png" />
     <!-- =========================================== -->
     <style>
-        table {
-            border-collapse: collapse;
-        }
 
-        th,
-        td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: center;
-        }
-
-        .addsuccessoff {
-            display: none;
-        }
-
-        .addsuccesson {
-            display: block;
-        }
     </style>
 </head>
 
@@ -64,90 +47,76 @@
                     </li> -->
 
                     <li class="nav-item my-auto">
-                        <form class="d-flex ">
-                            <input class="form-control" id="searchbar" type="search" placeholder="找活動..."
-                                aria-label="Search" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                                aria-expanded="false" aria-controls="collapseExample">
-                            </input>
-                            <button class="btn border border-1 border-dark" type="submit">Search</button>
-                        </form>
-
-
-                        <!-- ================================================================== -->
-                        <!-- <div class="collapse" id="collapseExample"> -->
-                        <div class="card card-body top-25 start-25 position-fixed d-none" id="searchcard">
-                            <div class="container-fluid w-100">
-                                <div class="row mb-3">
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option class="disable" selected>頁面 </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
+                        <form class="d-flex row">
+                            <div class="row" style="width: 400px; max-width: 400px;">
+                                <div class="col-8 pe-0">
+                                    <input class="form-control" id="searchbar" type="search" placeholder="搜尋..."
+                                        aria-label="Search" role="button">
+                                    </input>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-3">
-                                        <select class="form-select form-select-sm" aria-label="Default select example">
-                                            <option selected>Open </option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                                <div class="col-4 ps-0">
+                                    <button class="btn border border-1 border-dark" type="submit">Search</button>
+                                </div>
+                            </div>
+
+                            <!-- </form> -->
+                            <!-- ================================================================== -->
+                            <!-- <div class="collapse" id="collapseExample"> -->
+                            <div id="searchcard" class="d-none">
+                                <div class="card card-body w-50 position-fixed">
+                                    <!-- <form action="" class="row mb-0"> -->
+                                    <div class="row mb-0">
+                                        <div class="col-3">
+                                            <!-- <label for=""></label> -->
+                                            <select class="form-select form-select-sm col-3 mb-3"
+                                                aria-label="Default select example">
+                                                <option selected>頁面 </option>
+                                                <option value="1">商城</option>
+                                                <option value="2">論壇</option>
+                                                <option value="3">活動</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-3">
+                                            <select class="form-select form-select-sm"
+                                                aria-label="Default select example">
+                                                <option selected>運動類型 </option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-3">
+                                            <select class="form-select form-select-sm"
+                                                aria-label="Default select example">
+                                                <option selected>各自設定 </option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-3">
+                                            <select class="form-select form-select-sm"
+                                                aria-label="Default select example">
+                                                <option selected>各自設定 </option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="row">
+                                            <!-- <div class="col-9"></div> -->
+                                            <div class="col-12 ">
+                                                <!-- <button class="btn btn-primary" type="submit"> 查詢
+                                            </button> -->
+                                                <button class="btn btn-primary" type="button"
+                                                    id="btn-close-search">關閉</button>
+                                                <button class="btn btn-primary" type="reset"
+                                                    id="btn-close-search">重置</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- </div> -->
                     </li>
 
                     <!-- <div class="collapse  d-block" id="collapseExample">
@@ -172,6 +141,7 @@
                             <li><a class="dropdown-item" href="#!">商城</a></li>
                             <li><a class="dropdown-item" href="#!">論壇</a></li>
                             <li><a class="dropdown-item" href="#!">活動</a></li>
+                            <li><a class="dropdown-item" href="#!">課程</a></li>
                         </ul>
                     </li>
                     <!-- 鈴鐺============================================================= -->
@@ -254,6 +224,12 @@
                             <li>
                                 <a class="dropdown-item" href="#!">聊天列表</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item" href="#!">活動管理</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#!">課程管理</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -311,71 +287,23 @@
     <!-- Header====================================================================================== -->
 
     <!-- main-content -->
-    <div class="container main-content">
+    <div class="container main-content py-5">
         <!-- 請在這裡作業 -->
-        <h2>教練證照總列表</h2>
+        <div class="row">
+            <div class="col-12">
+                <p>team1</p>
 
-        <br>
-        <form class="needs-validation ">
-            <div class="row ">
-                <!-- <div class="col-12"> -->
-                <div class="col-sm-3">
-                    <label for="certName" class="form-label">教練證照中文名稱</label>
-                    <input type="text" class="form-control" id="certName" name="certName" placeholder="" value=""
-                        required>
-                    <div class="invalid-feedback">
-                        Your username is required.
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <label for="englishCertName" class="form-label">證照英文名:</label>
-                    <input type="text" class="form-control" id="englishCertName" name="englishCertName" placeholder=""
-                        value="" required>
-                </div>
-                <div class="col-sm-3">
-                    <label for="abbrName" class="form-label">證照英文縮寫:</label>
-                    <input type="text" class="form-control" id="abbrName" name="abbrName" placeholder="" value=""
-                        required>
-                </div>
-                <div class="col-sm-3 d-flex justify-content-end">
 
-                    <button class="btn" id="addbtn"
-                        style="margin-top:10% ; background-color:rgba(66, 184, 131, 1)">新增</button>
-                </div>
-                <!-- </div> -->
+
             </div>
-        </form>
-        <br>
-        <div id="addsuccess" class="addsuccessoff" style="text-align: end; color: red; font-weight: bold;">新增成功!
-        </div>
-
-        <div style="margin-top: 1%;">
-            <table class="table">
-                <thead style="background-color:rgba(66, 184, 131, 1)">
-                    <tr>
-                        <th>教練證照中文名稱</th>
-                        <th>證照英文名</th>
-                        <th>證照英文縮寫</th>
-                        <th colspan="2">修改</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>张三</td>
-                        <td>25</td>
-                        <td>北京</td>
-                        <td><button id="alterbtn" class="btn btn-primary">修改</button> </td>
-                        <td><button id="deletebtn" class="btn btn-danger">刪除</button></td>
-                    </tr>
-                    <!-- 這裡將用Ajax取得課程列表後再填入 -->
-                </tbody>
-            </table>
         </div>
     </div>
-    <br>
+
+
+
     <!-- 以下footer================================================================================= -->
-    <footer class="footer py-5 footer-color bottom-0 ">
-        <div class="container-fluid">
+    <footer class="footer py-5 footer-color">
+        <div class="container">
             <div class="row">
                 <div class="col-3">
                     <p class="m-0 text-white h3">客服中心</p>
@@ -400,25 +328,20 @@
         </div>
     </footer>
     <!-- footer結束================================================================================= -->
-
     <!-- 引入所需函式庫 -->
     <script src="../lib/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/js/popper.min.js"></script>
     <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
     <!-- ================================================================= -->
+
     <script>
-        $("#searchbar").on("click", function () {
-            $("#searchcard").toggleClass("d-none");
+        $("#searchbar").focus("click", function () {
+            $("#searchcard").removeClass("d-none");
         });
-
-        $(document).ready(function () {
-            $("#addbtn").on("click", function () {
-                console.log("ok");
-                $("#addsuccess").toggleClass("addsuccesson");
-            });
-        });
+        $("#btn-close-search").on("click", function () {
+            $("#searchcard").addClass("d-none");
+        })
     </script>
-
 </body>
 
 </html>

@@ -16,11 +16,12 @@
     <Resource auth="Container"
 		driverClassName="com.mysql.jdbc.Driver"
 		maxTotal="20" maxIdle="10" maxWaitMillis="-1"
-		name="jdbc/david" 
+		name="jdbc/trainer_course" 
 		password="password"
 		type="javax.sql.DataSource" 
-		url="jdbc:mysql://localhost:3306/db01?serverTimezone=Asia/Taipei"
+		url="jdbc:mysql://localhost:3306/trainer_course?serverTimezone=Asia/Taipei"
 		username="root" 
 		/>
-
+	<Environment name="java.naming.factory.initial" value="org.apache.naming.java.javaURLContextFactory" type="java.lang.String"/>
+	
 </Context>
