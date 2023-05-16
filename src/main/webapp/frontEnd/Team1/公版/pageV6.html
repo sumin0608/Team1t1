@@ -14,7 +14,22 @@
     <link rel="icon" type="image/x-icon" href="../lib/img/IX-nobackground.png" />
     <!-- =========================================== -->
     <style>
+        /* dropdownpic {
 
+            width: 150px;
+            height: 150px;
+        } */
+
+        .square-image {
+            height: 74px;
+            width: 74px;
+            object-fit: cover;
+        }
+
+        .memberdrop {
+            height: 93px;
+            min-width: 450px;
+        }
     </style>
 </head>
 
@@ -155,36 +170,18 @@
                             <path
                                 d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
                         </svg>
-                        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-lg-end d-block" aria-labelledby="navbarDropdown">
                             <!-- 一條通知====================================================== -->
-                            <!-- ====================================chat老師======================================================= -->
-                            <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
-                                    style="height: 93px; width: 600px;">
-                                    <div class="row h-100">
-                                        <div class="col-2 h-100">
-                                            <img src="https://picsum.photos/150/200/?random=10"
-                                                class="h-100 w-100 img-fluid" alt="" style="object-fit: cover">
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">List group item heading</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                            <small>And some small print.</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+
                             <!-- =========================================================================================== -->
-                            <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
-                                    style="height: 93px; width:600px;">
+                            <!-- <div class="list-group">
+                                A height: 93px; width:600px;
+                                <a href="#" class="list-group-item list-group-item-action memberdrop"
+                                    aria-current="true">
                                     <div class="row h-100">
-                                        <div class="col-2 h-100">
-                                            <img src="https://picsum.photos/150/200/?random=10" class="h-100 w-100"
-                                                alt="" style="object-fit:cover">
+                                        <div class="col-2">
+                                            <img src="https://picsum.photos/800/500/?random=10" class="square-image"
+                                                alt="" style="object-fit:cover;">
                                         </div>
                                         <div class="col-10">
                                             <div class="d-flex w-100 justify-content-between">
@@ -196,27 +193,35 @@
                                         </div>
                                     </div>
                                 </a>
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
-                                    style="height: 93px; width:600px;">
-                                    <div class="row h-100">
-                                        <div class="col-2 h-100">
-                                            <img src="https://picsum.photos/150/200/?random=10" class="h-100 w-100"
-                                                alt="" style="object-fit:cover">
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">List group item heading</h5>
-                                                <small>3 days ago</small>
+                            </div> -->
+                            <div class="row ">
+
+                                <div class="col-12">
+                                    <div class="list-group memberdrop">
+
+                                        <a href="#" class="list-group-item list-group-item-action p-1"
+                                            aria-current="true">
+
+                                            <div class="row">
+
+                                                <div class="col-3">
+                                                    <img src="https://picsum.photos/800/500/?random=10"
+                                                        class="square-image" alt="" style="object-fit:cover;">
+                                                </div>
+
+                                                <div class="col-9">
+                                                    <div class="w-100">
+                                                        <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                                    </div>
+                                                    <small class="">3 days ago</small>
+                                                </div>
+
                                             </div>
-                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                            <small>And some small print.</small>
-                                        </div>
+                                        </a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
-                        </ul>
+                        </div>
                     </li>
 
                     <!-- 會員頭像========================================================= -->
@@ -229,8 +234,8 @@
                         <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
 
                             <li>
-                                <img class="dropdown-item overflow-hidden p-2 rounded-circle"
-                                    src="https://picsum.photos/200/200/?random=10" width="150" height="150">
+                                <img class="dropdown-item dropdownpic overflow-hidden p-2 rounded-circle"
+                                    src="https://picsum.photos/200/200/?random=10">
                             </li>
                             <li>
                                 <span class="dropdown-item-text justify-content-center d-flex fs-5">名字</span>
