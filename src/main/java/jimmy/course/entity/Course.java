@@ -2,6 +2,7 @@ package jimmy.course.entity;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,9 +33,9 @@ public class Course extends Core {
 	private String eventName;
 	private Integer expectedPrice;
 	private Date courseStartDate;
-	private Timestamp courseStartTime;
-	private Timestamp courseDuration;
-	private Timestamp registrationDeadline;
+	private Timestamp courseStartTime; //
+	private LocalTime courseDuration;
+	private Timestamp registrationDeadline; //
 	private Timestamp courseCreationDate;
 	private Integer maximumCapacity;
 	private String description;
