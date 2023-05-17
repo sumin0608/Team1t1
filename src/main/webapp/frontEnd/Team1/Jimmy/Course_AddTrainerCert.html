@@ -435,7 +435,7 @@
                 var abbrName = $("#abbrName").val();
                 console.log(certName);
                 $.ajax({
-                    url: "/Teamt1/addTrainerCertServlet",
+                    url: "/Team1/addTrainerCertServlet",
                     type: "POST",
                     data: {
                         certName: certName,
@@ -458,7 +458,7 @@
                 event.preventDefault(); // 防止表單提交
                 // 使用Ajax取得課程列表
                 $.ajax({
-                    url: "/Teamt1/getAllTrainerCertServlet",
+                    url: "/Team1/getAllTrainerCertServlet",
                     type: "GET",
                     dataType: "json",
                     //dataType: "text",
@@ -505,7 +505,7 @@
                 console.log(abbrName);
 
                 $.ajax({
-                    url: "/Teamt1/deleteTrainerCertServlet",
+                    url: "/Team1/deleteTrainerCertServlet",
                     type: "POST",
                     data: {
                         number: number,
@@ -545,7 +545,7 @@
                     console.log(englishCertName);
                     console.log(abbrName);
                     $.ajax({
-                        url: "/Teamt1/updaterainerCertServlet",
+                        url: "/Team1/updaterainerCertServlet",
                         type: "POST",
                         data: {
                             number: number,
@@ -578,7 +578,7 @@
                 let word = $("#searchname").val();
                 console.log("關鍵字=" + word);
                 $.ajax({
-                    url: "/Teamt1/oneTrainerCertServlet",
+                    url: "/Team1/oneTrainerCertServlet",
                     type: "GET",
                     data: { certName: word },
                     success: function (resp) {

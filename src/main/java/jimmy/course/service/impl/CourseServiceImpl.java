@@ -23,7 +23,22 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public Course find(Integer creator) {
-		return dao.selectByCreator(creator);
+		Course  course = dao.selectByCreator(creator);
+		if (course != null) {
+			course.setSuccessful(true);
+			course.setMessage("搜尋成功!");
+
+			System.out.println(course);
+		} else {
+			course = new Course(); //要new新的，因回傳null
+			course.setCourseId(0);
+			course.setCreator(0);
+			course.setSuccessful(false);
+			course.setMessage("搜尋失敗?");
+			
+			System.out.println(course);
+		}
+		return course;
 	}
 
 }
