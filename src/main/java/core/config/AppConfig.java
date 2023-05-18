@@ -36,15 +36,17 @@ public class AppConfig {
 
 	@Bean
 	public SessionFactory sessionFactory() throws IllegalArgumentException, NamingException {
-		return new LocalSessionFactoryBuilder(dataSource()).scanPackages("jimmy.*.entity")
-				.addProperties(getHibernateProperties()).buildSessionFactory();
+		return new LocalSessionFactoryBuilder(dataSource())
+				.scanPackages("jimmy.*.entity")
+				.addProperties(getHibernateProperties())
+				.buildSessionFactory();
 	}
 
 	private Properties getHibernateProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.dialect", MySQLDialect.class.getName());
-		properties.setProperty("hibernate.show_sql", "true");
-		properties.setProperty("hibernate.format_sql", "true");
+//		properties.setProperty("hibernate.show_sql", "true");
+//		properties.setProperty("hibernate.format_sql", "true");
 		properties.setProperty("hibernate.current_session_context_class", SpringSessionContext.class.getName());
 		return properties;
 	}

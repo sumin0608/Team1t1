@@ -15,15 +15,16 @@ import jimmy.trainercert.service.TrainerCertService;
 @Service
 public class TrainerCertServiceImpl implements TrainerCertService {
 
-	//@Autowired
+	@Autowired
 	private TrainerCertDao dao;
 
-	public TrainerCertServiceImpl() {
-		dao = new TrainerCertDaoImpl();
-	}
+//	public TrainerCertServiceImpl() {
+//		dao = new TrainerCertDaoImpl();
+//	}
 	
 	@Override
 	public List<TrainerCert> getall() {
+		System.out.println("到service成功");
 		if (dao.getAll() != null) {
 			return dao.getAll();
 		} else {

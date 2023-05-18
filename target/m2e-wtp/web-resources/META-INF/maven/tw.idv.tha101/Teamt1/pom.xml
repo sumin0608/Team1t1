@@ -31,6 +31,12 @@
 			<artifactId>spring-aop</artifactId>
 			<version>${spring-version}</version>
 		</dependency>
+<!-- 		用來 transaction management -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
 		<!-- 為了託管hibernate -->
 		<dependency>
 			<groupId>org.springframework</groupId>
