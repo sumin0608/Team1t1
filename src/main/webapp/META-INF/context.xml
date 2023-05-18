@@ -4,8 +4,8 @@
     
 <!--     jimmy_mySQL -->
     <Resource name="jdbc/trainer_course" type="javax.sql.DataSource" 
-		driverClassName="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/trainer_course?serverTimezone=Asia/Taipei"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		jdbcUrl="jdbc:mysql://localhost:3306/trainer_course?serverTimezone=Asia/Taipei"
 		username="root" 
 		password="password"
 		factory="com.zaxxer.hikari.HikariJNDIFactory"
