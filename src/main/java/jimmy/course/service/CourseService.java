@@ -9,5 +9,5 @@ import jimmy.course.entity.Course;
 public interface CourseService {
 	List<Course> findAll();
 
-	Course find(Integer creator);
+	List<Course> find(Integer creator);
 }

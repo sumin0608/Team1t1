@@ -485,7 +485,7 @@
                             tableData += `</tr>`;
                         }
                         $("#courseList").empty().append(tableData);
-                        $("#result").empty();
+                        $("#result").empty().append("全部");
                     },
                     error: function (xhr, status, error) {
                         alert("Error: " + xhr.responseText);
@@ -588,29 +588,33 @@
                         console.log("message>>" + tostring);
                         console.log("message4>>" + tostring4);
                         $("#result").empty().append(tostring);
+
                         let tableData = '';
-                        let certItem = resp;
                         if (tostring4 === true) {
-                            tableData += `<tr class="table_tr">`;
-                            tableData += `<td class="number_td">${certItem.number}</td>`;
-                            tableData += `<td class="certName_td"> ${certItem.certName}</td >`;
-                            tableData += `<td class="englishCertName_td"> ${certItem.englishCertName}</td > `;
-                            tableData += `<td class="abbrName_td"> ${certItem.abbrName}</td > `;
-                            tableData += `<td><button class="btn btn-primary alterbtn">修改</button></td > `;
-                            tableData += `<td><button class="btn btn-danger deletebtn">刪除</button></td > `;
-                            tableData += `</tr>`;
-                            tableData += `<tr class="table_update -none">`;
-                            tableData += `<td class="number_update">${certItem.number}</td>`;
-                            tableData += `<td><input type='text' class='certName_updatet' placeholder='請輸入更新…'/></td > `;
-                            tableData += `<td><input type='text' class='englishCertName_updatet' placeholder='請輸入更新…'/></td > `;
-                            tableData += `<td class="abbrName_update"><input type='text' class='abbrName_updatet' placeholder='請輸入更新…'/></td > `;
-                            tableData += `<td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td > `;
-                            tableData += `</tr>`;
+                            for (let i = 0; i < resp.length; i++) {
+                                let certItem = resp[i];
+                                tableData += `<tr class="table_tr">`;
+                                tableData += `<td class="number_td">${certItem.number}</td>`;
+                                tableData += `<td class="certName_td"> ${certItem.certName}</td >`;
+                                tableData += `<td class="englishCertName_td"> ${certItem.englishCertName}</td > `;
+                                tableData += `<td class="abbrName_td"> ${certItem.abbrName}</td > `;
+                                tableData += `<td><button class="btn btn-primary alterbtn">修改</button></td > `;
+                                tableData += `<td><button class="btn btn-danger deletebtn">刪除</button></td > `;
+                                tableData += `</tr>`;
+                                tableData += `<tr class="table_update -none">`;
+                                tableData += `<td class="number_update">${certItem.number}</td>`;
+                                tableData += `<td><input type='text' class='certName_updatet' placeholder='請輸入更新…'/></td > `;
+                                tableData += `<td><input type='text' class='englishCertName_updatet' placeholder='請輸入更新…'/></td > `;
+                                tableData += `<td class="abbrName_update"><input type='text' class='abbrName_updatet' placeholder='請輸入更新…'/></td > `;
+                                tableData += `<td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td > `;
+                                tableData += `</tr>`;
+                            }
                         }
                         else {
                             tableData += `<tr><td class=">查無此名稱</td ></tr>`
                         }
                         $("#courseList").empty().append(tableData);
+                        $("#result").empty().append(word + "相關");
                     },
                     error: function (xhr, status, error) {
                         alert("Error: " + xhr.responseText);

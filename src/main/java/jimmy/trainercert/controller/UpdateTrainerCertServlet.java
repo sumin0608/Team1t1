@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jimmy.trainercert.entity.TrainerCert;
 import jimmy.trainercert.service.TrainerCertService;
 import jimmy.trainercert.service.impl.TrainerCertServiceImpl;
-import jimmy.trainercert.vo.TrainerCert;
 
 @WebServlet("/updaterainerCertServlet")
 public class UpdateTrainerCertServlet extends HttpServlet{

@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 //import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
@@ -21,24 +20,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 //@EnableAspectJAutoProxy
 //@ComponentScan({"web.*.*.impl","core"})
-//@ComponentScan("web.*.*.impl")
-@EnableTransactionManagement
 @Configuration
 @ComponentScan("jimmy.*.*.impl")
+@EnableTransactionManagement
 public class AppConfig {
 
 	@Bean
-	public DataSource driverManagerDataSource() {
-	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
-	    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-	    dataSource.setUrl("jdbc:mysql://localhost:3306/trainer_course");
-	    dataSource.setUsername("root");
-	    dataSource.setPassword("password");
-	    return dataSource;
-	}
-	
-	@Bean
-	public DataSource jndidataSource() throws IllegalArgumentException, NamingException {
+	public DataSource dataSource() throws IllegalArgumentException, NamingException {
 		JndiObjectFactoryBean bean = new JndiObjectFactoryBean();
 		bean.setResourceRef(true);
 		bean.setJndiName("jdbc/trainer_course");
@@ -48,7 +36,7 @@ public class AppConfig {
 
 	@Bean
 	public SessionFactory sessionFactory() throws IllegalArgumentException, NamingException {
-		return new LocalSessionFactoryBuilder(jndidataSource()).scanPackages("jimmy.*.entity")
+		return new LocalSessionFactoryBuilder(dataSource()).scanPackages("jimmy.*.entity")
 				.addProperties(getHibernateProperties()).buildSessionFactory();
 	}
 
@@ -66,4 +54,15 @@ public class AppConfig {
 		return new HibernateTransactionManager(sessionFactory());
 	}
 	
+//	@Bean
+//	@Qualifier("driverManagerDataSource")
+//	public DataSource driverManagerDataSource() {
+//	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//	    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//	    dataSource.setUrl("jdbc:mysql://localhost:3306/trainer_course");
+//	    dataSource.setUsername("root");
+//	    dataSource.setPassword("password");
+//	    return dataSource;
+//	}
 }
+

@@ -12,10 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import jimmy.trainercert.entity.TrainerCert;
 import jimmy.trainercert.service.TrainerCertService;
-import jimmy.trainercert.dao.impl.TrainerCertDaoImpl;
 import jimmy.trainercert.service.impl.TrainerCertServiceImpl;
-import jimmy.trainercert.vo.TrainerCert;
 
 @WebServlet("/getAllTrainerCertServlet")
 public class GetAllTrainerCertServlet extends HttpServlet{

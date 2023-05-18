@@ -12,7 +12,6 @@ import jimmy.course.entity.Course;
 
 @Repository
 public class CourseDaoImpl implements CourseDao {
-
 	@PersistenceContext
 	private Session session;
 
