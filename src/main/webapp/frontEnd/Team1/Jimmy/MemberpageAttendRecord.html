@@ -14,20 +14,7 @@
     <link rel="icon" type="image/x-icon" href="../lib/img/IX-nobackground.png" />
     <!-- =========================================== -->
     <style>
-        table {
-            border-collapse: collapse;
-        }
 
-        th,
-        td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: center;
-        }
-
-        tr.-none {
-            display: none;
-        }
     </style>
 </head>
 
@@ -214,7 +201,7 @@
 
                     <!-- 會員頭像========================================================= -->
                     <li class="nav-item dropdown mx-2 my-auto">
-                        <img src="https://picsum.photos/300/200/?random=10"
+                        <img src="../lib/img/clown.png"
                             class="nav-link dropdown-toggle overflow-hidden rounded-circle p-0" id="navbarDropdown"
                             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" width="36"
                             height="36">
@@ -222,8 +209,8 @@
                         <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
 
                             <li>
-                                <img class="dropdown-item overflow-hidden p-2 rounded-circle"
-                                    src="https://picsum.photos/200/200/?random=10" width="150" height="150">
+                                <img class="dropdown-item overflow-hidden p-2 rounded-circle" src="../lib/img/clown.png"
+                                    width="150" height="150">
                             </li>
                             <li>
                                 <span class="dropdown-item-text justify-content-center d-flex fs-5">名字</span>
@@ -261,6 +248,7 @@
     <!-- 導覽列結束=================================================================================== -->
 
     <!-- 這裡大概是放廣告 -->
+    <!-- Header====================================================================================== -->
     <!-- <header>
         <div class="container-fluid p-0">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -296,99 +284,129 @@
             </div>
         </div>
     </header> -->
-
+    <!-- Header====================================================================================== -->
 
     <!-- main-content -->
-    <div class="container main-content">
+    <div class="container main-content py-5">
         <!-- 請在這裡作業 -->
-        <h2>教練證照總列表</h2>
-        <br>
-        <form class="needs-validation ">
-            <div class="row ">
-                <!-- <div class="col-12"> -->
-                <div class="col-sm-3">
-                    <label for="certName" class="form-label">證照中文名:</label>
-                    <input type="text" class="form-control af " id="certName" name="certName" placeholder="" required>
-                    <!-- <div class="invalid-feedback">
-                        Your username is required.
-                    </div> -->
+        <div class="row border justify-content-center">
+            <div class="col-9">
+                <!-- <div class="row justify-content-center">
+                    <div class="col-8"> -->
+                <!-- 原本有下style="max-width: 540px;" -->
+
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4 m-3 overflow-hidden rounded-circle">
+                            <img src="../lib/img/clown.png" alt="..." sytle="object-fit: cover">
+                        </div>
+                        <div class="col-md-7 my-auto">
+                            <div class="card-body ms-5">
+                                <h5 class="card-title mb-4">Username</h5>
+                                <p class="card-text mb-4">所在城市/OO歲</p>
+                                <a href="" class="d-grid gap-2 w-50 mb-3">
+                                    <button class="btn btn-primary" type="button">編輯個人資訊</button>
+                                </a>
+                                <a href="" class="d-grid gap-2 w-50">
+                                    <button class="btn btn-primary" type="button">成為教練</button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <label for="englishCertName" class="form-label">證照英文名:</label>
-                    <input type="text" class="form-control af " id="englishCertName" name="englishCertName"
-                        placeholder="" required>
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">會員簡介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">過往評價</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">參加紀錄</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- 原本disable的設定 tabindex="-1" aria-disabled="true" -->
+                        <a class="nav-link" href="#">舉辦紀錄</a>
+                    </li>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">我的最愛</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">論壇紀錄</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">行事曆</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">購物紀錄</a>
+                        </li>
+                    </ul>
+                </ul>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="p-0" aria-labelledby="">
+                            <!-- 一條通知====================================================== -->
+
+                            <div class="list-group">
+                                <div href="#" class="list-group-item list-group-item-action" aria-current="true"
+                                    style="height: 118px;">
+                                    <div class="row h-100">
+                                        <div class="col-2 h-100 " style="">
+                                            <img src="https://picsum.photos/500/200/?random=10" class="h-100" alt=""
+                                                style="object-fit:cover; width:100px;">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">活動標題List group item heading</h5>
+                                            </div>
+                                            <p class="mb-1">活動時間</p>
+                                            <small>報名狀態</small>
+                                        </div>
+                                        <div class="col-2">
+                                            <a class="btn btn-primary" href="#" role="button">前往評價</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
+                                    style="height: 96px;">
+                                    <div class="row h-100">
+                                        <div class="col-2 h-100">
+                                            <img src="https://picsum.photos/150/200/?random=10" class="h-100 w-100"
+                                                alt="" style="object-fit:cover">
+                                        </div>
+                                        <div class="col-10">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">List group item heading</h5>
+                                                <small>3 days ago</small>
+                                            </div>
+                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                            <small>And some small print.</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div> -->
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <label for="abbrName" class="form-label">證照英文縮寫:</label>
-                    <input type="text" class="form-control af " id="abbrName" name="abbrName" placeholder="" required>
-                </div>
-                <div class="col-sm-3 d-flex justify-content-end">
-                    <button class="btn" id="addbtn"
-                        style="margin-top:10% ; background-color:rgba(66, 184, 131, 1)">新增</button>
-                </div>
-                <!-- </div> -->
             </div>
-        </form>
-        <br>
-        <!-- <div id="addsuccess" class="addsuccessoff" style="text-align: end; color: red; font-weight: bold;">kk! -->
+        </div>
+
+
+
+    </div>
+    </div>
     </div>
 
-    <div style="margin-top: 1%;">
-        <div>
-            <button class="btn" id="getall" style="background-color:rgba(66, 184, 131, 1)">查看全部</button>
-            <button class="btn" id="getsingle" style="background-color:#bdbebd;margin-left: 2%;">搜尋:</button>
-            <div style="display: inline-block;">
-                <input class="form-control" id="searchname" type="search" placeholder="搜尋證照中文名..." aria-label="Search"
-                    role="button">
-                </input>
-            </div>
-            <div style="display: inline-block; margin-left: 2%;"><span>狀態:</span></div>
-            <div id="result" style="display: inline-block; margin-left: 2%;color: red;"></div>
-        </div>
-        <br>
-        <table id="courseList0" class="table">
-            <thead style="background-color:rgba(66, 184, 131, 1)">
-                <tr>
-                    <th>編號</th>
-                    <th>證照中文名</th>
-                    <th>證照英文名</th>
-                    <th>證照英文縮寫</th>
-                    <th colspan="2">修改</th>
-                </tr>
-                <tr style="color: red;background-color:#bdbebd">
-                    <td>number</td>
-                    <td>certName</td>
-                    <td>englishCertName</td>
-                    <td>abbrName</td>
-                    <td colspan="2"></td>
-                </tr>
-            </thead>
-            <!-- 這裡將用Ajax取得課程列表後再填入 -->
-            <tbody id="courseList">
-                <tr>
-                    <td class="number_td">n</td>
-                    <td class="certName_td">EX:张三</td>
-                    <td class="englishCertName_td">25</td>
-                    <td class="abbrName_td">北京</td>
-                    <td><button class="btn btn-primary alterbtn">修改</button></td>
-                    <td><button class="btn btn-danger deletebtn">刪除</button></td>
-                </tr>
-                <tr class="table_update -none">
-                    <td class="number_update">${certItem.number}</td>
-                    <td class="certName_update"><input type='text' class='task_update' placeholder='請輸入更新…' /></td>
-                    <td class="englishCertName_update"><input type='text' class='task_update' placeholder='請輸入更新…' />
-                    </td>
-                    <td class="abbrName_update"><input type='text' class='task_update' placeholder='請輸入更新…' /></td>
-                    <td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    </div>
-    <br>
+
+
     <!-- 以下footer================================================================================= -->
-    <footer class="footer py-5 footer-color bottom-0 ">
-        <div class="container-fluid">
+    <footer class="footer py-5 footer-color">
+        <div class="container">
             <div class="row">
                 <div class="col-3">
                     <p class="m-0 text-white h3">客服中心</p>
@@ -413,12 +431,12 @@
         </div>
     </footer>
     <!-- footer結束================================================================================= -->
-
     <!-- 引入所需函式庫 -->
     <script src="../lib/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/js/popper.min.js"></script>
     <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
     <!-- ================================================================= -->
+
     <script>
         $("#searchbar").focus("click", function () {
             $("#searchcard").removeClass("d-none");
@@ -426,205 +444,7 @@
         $("#btn-close-search").on("click", function () {
             $("#searchcard").addClass("d-none");
         })
-
-        $(document).ready(function () {
-            $("#addbtn").on("click", function (e) {
-                e.preventDefault(); // 防止表單提交
-                var certName = $("#certName").val();
-                var englishCertName = $("#englishCertName").val();
-                var abbrName = $("#abbrName").val();
-                console.log(certName);
-                $.ajax({
-                    url: "/Team1/addTrainerCertServlet",
-                    type: "POST",
-                    data: {
-                        certName: certName,
-                        englishCertName: englishCertName,
-                        abbrName: abbrName
-                    },
-                    success: function (resp) {
-                        console.log("resp>>" + resp);
-                        $("#result").empty();
-                        $("#result").append(resp);
-                        $(".af").val("");
-                    },
-                    error: function (xhr, status, error) {
-                        alert("Error: " + xhr.responseText);
-                    }
-                });
-            });
-
-            $("#getall").on("click", function (event) {
-                event.preventDefault(); // 防止表單提交
-                // 使用Ajax取得課程列表
-                $.ajax({
-                    url: "/Team1/getAllTrainerCertServlet",
-                    type: "GET",
-                    dataType: "json",
-                    //dataType: "text",
-                    success: function (resp) {
-                        console.log("resp>>" + resp);
-
-                        let tableData = '';
-                        for (let i = 0; i < resp.length; i++) {
-                            let certItem = resp[i];
-                            tableData += `<tr class="table_tr">`;
-                            tableData += `<td class="number_td">${certItem.number}</td>`;
-                            tableData += `<td class="certName_td"> ${certItem.certName}</td >`;
-                            tableData += `<td class="englishCertName_td"> ${certItem.englishCertName}</td > `;
-                            tableData += `<td class="abbrName_td"> ${certItem.abbrName}</td > `;
-                            tableData += `<td><button class="btn btn-primary alterbtn">修改</button></td > `;
-                            tableData += `<td><button class="btn btn-danger deletebtn">刪除</button></td > `;
-                            tableData += `</tr>`;
-                            tableData += `<tr class="table_update -none">`;
-                            tableData += `<td class="number_update">${certItem.number}</td>`;
-                            tableData += `<td><input type='text' class='certName_updatet' placeholder='請輸入更新…'/></td > `;
-                            tableData += `<td><input type='text' class='englishCertName_updatet' placeholder='請輸入更新…'/></td > `;
-                            tableData += `<td class="abbrName_update"><input type='text' class='abbrName_updatet' placeholder='請輸入更新…'/></td > `;
-                            tableData += `<td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td > `;
-                            tableData += `</tr>`;
-                        }
-                        $("#courseList").empty().append(tableData);
-                        $("#result").empty().append("全部");
-                    },
-                    error: function (xhr, status, error) {
-                        alert("Error: " + xhr.responseText);
-                    }
-                });
-            });
-
-            $(document).on("click", ".deletebtn", function () {
-                console.log(this);
-                var number = $(this).closest('tr').find('.number_td').text();
-                var certName = $(this).closest('tr').find('.certName_td').text();
-                var englishCertName = $(this).closest('tr').find(".englishCertName_td").text();
-                var abbrName = $(this).closest('tr').find(".abbrName_td").text();
-                console.log(number);
-                console.log(certName);
-                console.log(englishCertName);
-                console.log(abbrName);
-
-                $.ajax({
-                    url: "/Team1/deleteTrainerCertServlet",
-                    type: "POST",
-                    data: {
-                        number: number,
-                        certName: certName,
-                        englishCertName: englishCertName,
-                        abbrName: abbrName
-                    },
-                    success: function (resp) {
-                        console.log("resp>>" + resp);
-                        $("#result").empty().append(resp);
-                        alert("刪除成功請刷新頁面")
-                    },
-                    error: function (xhr, status, error) {
-                        alert("Error: " + xhr.responseText);
-                    }
-                });
-            });
-
-            $(document).on("click", ".alterbtn", function () {
-                console.log(this);
-                var tableUpdateRow = $(this).closest("tr").next("tr.table_update");
-                console.log("隱藏欄位" + tableUpdateRow);
-                if (tableUpdateRow.hasClass('-none')) {
-                    tableUpdateRow.removeClass('-none');
-                } else {
-                    tableUpdateRow.addClass('-none');
-                }
-                // 进一步操作 tableUpdateRow 中的元素
-                $(document).on("click", ".sendbtn", function () {
-                    console.log(this);
-                    var number = $(this).closest('tr').find('.number_update').text();
-                    var certName = $(this).closest('tr').find('.certName_updatet').val();
-                    var englishCertName = $(this).closest('tr').find(".englishCertName_updatet").val();
-                    var abbrName = $(this).closest('tr').find(".abbrName_updatet").val();
-                    console.log(number);
-                    console.log(certName);
-                    console.log(englishCertName);
-                    console.log(abbrName);
-                    $.ajax({
-                        url: "/Team1/updaterainerCertServlet",
-                        type: "POST",
-                        data: {
-                            number: number,
-                            certName: certName,
-                            englishCertName: englishCertName,
-                            abbrName: abbrName
-                        },
-                        success: function (resp) {
-                            console.log("resp>>" + resp);
-                            $("#result").empty().append(resp);
-                            //更新後隱藏欄位
-                            var tableDeleteRow = $(this).closest("tr");
-                            $("tableDeleteRow").addClass("-none");
-                        },
-                        error: function (xhr, status, error) {
-                            alert("Error: " + xhr.responseText);
-                        }
-                    });
-                    if (tableUpdateRow.hasClass('-none')) {
-                        tableUpdateRow.removeClass('-none');
-                        // return;
-                    } else {
-                        tableUpdateRow.addClass('-none');
-                    }
-                });
-            });
-
-            $("#getsingle").on('click', function (e) {
-                e.preventDefault();
-                let word = $("#searchname").val();
-                console.log("關鍵字=" + word);
-                $.ajax({
-                    url: "/Team1/oneTrainerCertServlet",
-                    type: "GET",
-                    data: { certName: word },
-                    success: function (resp) {
-                        console.log("resp>>" + resp);
-                        const tostring = JSON.stringify(resp[0].message);//要轉字串才能
-                        const tostring4 = JSON.stringify(resp[0].successful);//要轉字串才能
-                        console.log("message>>" + tostring);
-                        console.log("message4>>" + tostring4);
-                        $("#result").empty().append(tostring);
-
-                        let tableData = '';
-                        if (tostring4 === "true") {
-                            for (let i = 0; i < resp.length; i++) {
-                                let certItem = resp[i];
-                                tableData += `<tr class="table_tr">`;
-                                tableData += `<td class="number_td">${certItem.number}</td>`;
-                                tableData += `<td class="certName_td"> ${certItem.certName}</td >`;
-                                tableData += `<td class="englishCertName_td"> ${certItem.englishCertName}</td > `;
-                                tableData += `<td class="abbrName_td"> ${certItem.abbrName}</td > `;
-                                tableData += `<td><button class="btn btn-primary alterbtn">修改</button></td > `;
-                                tableData += `<td><button class="btn btn-danger deletebtn">刪除</button></td > `;
-                                tableData += `</tr>`;
-                                tableData += `<tr class="table_update -none">`;
-                                tableData += `<td class="number_update">${certItem.number}</td>`;
-                                tableData += `<td><input type='text' class='certName_updatet' placeholder='請輸入更新…'/></td > `;
-                                tableData += `<td><input type='text' class='englishCertName_updatet' placeholder='請輸入更新…'/></td > `;
-                                tableData += `<td class="abbrName_update"><input type='text' class='abbrName_updatet' placeholder='請輸入更新…'/></td > `;
-                                tableData += `<td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td > `;
-                                tableData += `</tr>`;
-                            }
-                        }
-                        else {
-                            tableData += `<tr><td class=">查無此名稱</td ></tr>`
-                        }
-                        $("#courseList").empty().append(tableData);
-                        $("#result").empty().append(word + "相關");
-                    },
-                    error: function (xhr, status, error) {
-                        alert("Error: " + xhr.responseText);
-                    }
-                });
-            });
-
-        });
     </script>
-
 </body>
 
 </html>

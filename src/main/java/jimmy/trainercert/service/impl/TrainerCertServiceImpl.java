@@ -113,7 +113,7 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 			for (TrainerCert trainerCert : trainerCerts) {
 				trainerCert.setSuccessful(true);
 				trainerCert.setMessage("搜尋成功!");
-				System.out.println(trainerCert);				
+				System.out.println("service印出"+trainerCert);				
 			}
 		} else {
 			List<TrainerCert> emptylist = Collections.emptyList();		
@@ -125,6 +125,7 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 			trainerCert.setSuccessful(false);
 			trainerCert.setMessage("搜尋失敗?");
 			emptylist.add(trainerCert);
+			System.out.println("service印出搜尋失敗");	
 			return emptylist;
 		}
 		return trainerCerts;

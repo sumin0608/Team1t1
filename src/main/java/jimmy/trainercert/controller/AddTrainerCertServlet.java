@@ -9,15 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import core.util.CommonUtil;
 import jimmy.trainercert.entity.TrainerCert;
 import jimmy.trainercert.service.TrainerCertService;
 import jimmy.trainercert.service.impl.TrainerCertServiceImpl;
 
 @WebServlet("/addTrainerCertServlet")
 public class AddTrainerCertServlet extends HttpServlet{
+	
 	private static final long serialVersionUID = 1L;
-	public static final TrainerCertService SERVICE = new TrainerCertServiceImpl();
+	public static TrainerCertService service = new TrainerCertServiceImpl();
 
+	@Override
+	public void init() throws ServletException {
+		service = CommonUtil.getBean(getServletContext(), TrainerCertService.class);
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -29,7 +36,7 @@ public class AddTrainerCertServlet extends HttpServlet{
 		String abbrName = request.getParameter("abbrName");
 		TrainerCert trainerCert = new TrainerCert(certName, englishCertName, abbrName);
 
-		TrainerCert responseBack = SERVICE.addnew(trainerCert);
+		TrainerCert responseBack = service.addnew(trainerCert);
 		boolean success = responseBack.isSuccessful();
 
 		if (success) {

@@ -30,7 +30,7 @@ public class TrainerCertDaoImpl implements TrainerCertDao {
 
 	@Override
 	public List<TrainerCert> getAll() {
-		final String sql = "SELECT * FROM TrainerCert";
+		final String sql = "FROM TrainerCert";
 		return session.createQuery(sql, TrainerCert.class).getResultList();
 
 //		List<TrainerCert> trainerCerts = new ArrayList<>();
@@ -136,7 +136,7 @@ public class TrainerCertDaoImpl implements TrainerCertDao {
 
 	@Override
 	public TrainerCert ckeckTrainerCertByName(String cert_name) {
-		String sql = "select * FROM TrainerCert WHERE certName = :certName";
+		String sql = "FROM TrainerCert WHERE certName = :certName";
 		return session.createQuery(sql, TrainerCert.class)
 	                 .setParameter("certName", cert_name)
 	                 .uniqueResult();
