@@ -21,7 +21,7 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 //	public TrainerCertServiceImpl() {
 //		dao = new TrainerCertDaoImpl();
 //	}
-	
+
 	@Override
 	public List<TrainerCert> getall() {
 		System.out.println("到service成功");
@@ -31,7 +31,7 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 			return null;
 		}
 	}
-	
+
 	@Transactional
 	@Override
 	public TrainerCert addnew(TrainerCert trainerCert) {
@@ -63,7 +63,6 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 		return trainerCert;
 	}
 
-
 	@Transactional
 	@Override
 	public boolean remove(Integer id) {
@@ -72,7 +71,7 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 		}
 		return false;
 	}
-	
+
 	@Transactional
 	@Override
 	public TrainerCert edit(TrainerCert trainerCert) {
@@ -109,14 +108,7 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 
 	public List<TrainerCert> get(String certName) {
 		List<TrainerCert> trainerCerts = dao.selectTrainerCertByName(certName);
-		if (trainerCerts != null) {
-			for (TrainerCert trainerCert : trainerCerts) {
-				trainerCert.setSuccessful(true);
-				trainerCert.setMessage("搜尋成功!");
-				System.out.println("service印出"+trainerCert);				
-			}
-		} else {
-			List<TrainerCert> emptylist = Collections.emptyList();		
+		if ((trainerCerts).isEmpty()) {
 			TrainerCert trainerCert = new TrainerCert(); // 要new新的，因trainerCert回傳null
 			trainerCert.setNumber(0);
 			trainerCert.setCertName("none");
@@ -124,11 +116,18 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 			trainerCert.setAbbrName("none");
 			trainerCert.setSuccessful(false);
 			trainerCert.setMessage("搜尋失敗?");
-			emptylist.add(trainerCert);
-			System.out.println("service印出搜尋失敗");	
-			return emptylist;
+			trainerCerts.add(trainerCert);
+			System.out.println("service印出搜尋失敗");
+			return trainerCerts;
+		} else {
+			for (TrainerCert trainerCert : trainerCerts) {
+				trainerCert.setSuccessful(true);
+				trainerCert.setMessage("搜尋成功!");
+				System.out.println("service印出" + trainerCert);
+			}
+			return trainerCerts;
 		}
-		return trainerCerts;
 	}
-
+	
+	
 }
