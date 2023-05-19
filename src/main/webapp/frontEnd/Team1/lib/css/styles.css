@@ -94,6 +94,20 @@ div.main-content {
   border-radius: 50%;
   transform: translate(50%, -50%);
 }
+/* 未讀通知的樣式 */
+/* 還不確定怎麼寫 */
+/* .notifyunread {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+} */
+
+/* 搜尋欄彈出框的樣式 */
 .searchbarthing {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;

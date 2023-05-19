@@ -19,7 +19,9 @@
 </head>
 
 <body>
-
+    <!-- 我是V6，修改如下 -->
+    <!-- 1.修正會員彈出選單頭像會跑版的問題 -->
+    <!-- 2.修正通知圖片會有跑板問題 -->
     <!-- 以下導覽列=================================================================================== -->
     <!-- 增加w-100 sticky-top -->
     <nav class="navbar navbar-expand-lg navbar-light w-100 sticky-top navbar-color">
@@ -157,42 +159,22 @@
                         </svg>
                         <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
                             <!-- 一條通知====================================================== -->
-                            <!-- ====================================chat老師======================================================= -->
-                            <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-action" aria-current="true"
-                                    style="height: 93px; width: 600px;">
-                                    <div class="row h-100">
-                                        <div class="col-2 h-100">
-                                            <img src="https://picsum.photos/150/200/?random=10"
-                                                class="h-100 w-100 img-fluid" alt="" style="object-fit: cover">
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">List group item heading</h5>
-                                                <small>3 days ago</small>
-                                            </div>
-                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                            <small>And some small print.</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- =========================================================================================== -->
+                            <!-- 完成版 600px -->
                             <div class="list-group">
                                 <a href="#" class="list-group-item list-group-item-action" aria-current="true"
                                     style="height: 93px; width:600px;">
                                     <div class="row h-100">
-                                        <div class="col-2 h-100">
-                                            <img src="https://picsum.photos/150/200/?random=10" class="h-100 w-100"
-                                                alt="" style="object-fit:cover">
+                                        <div class="col-2 h-100 notifyunread">
+                                            <img src="https://picsum.photos/150/200/?random=10" width="72px"
+                                                height="72px" alt="" style="object-fit:cover">
                                         </div>
                                         <div class="col-10">
                                             <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">List group item heading</h5>
-                                                <small>3 days ago</small>
+                                                <p class="mb-1" style=" overflow: hidden;">
+                                                    一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+                                                </p>
+                                                <small style="white-space: nowrap;">3 days ago</small>
                                             </div>
-                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                            <small>And some small print.</small>
                                         </div>
                                     </div>
                                 </a>
@@ -201,17 +183,17 @@
                                 <a href="#" class="list-group-item list-group-item-action" aria-current="true"
                                     style="height: 93px; width:600px;">
                                     <div class="row h-100">
-                                        <div class="col-2 h-100">
-                                            <img src="https://picsum.photos/150/200/?random=10" class="h-100 w-100"
-                                                alt="" style="object-fit:cover">
+                                        <div class="col-2 h-100 notifyunread">
+                                            <img src="https://picsum.photos/150/200/?random=10" width="72px"
+                                                height="72px" alt="" style="object-fit:cover">
                                         </div>
                                         <div class="col-10">
                                             <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1">List group item heading</h5>
-                                                <small>3 days ago</small>
+                                                <p class="mb-1" style=" overflow: hidden;">
+                                                    一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+                                                </p>
+                                                <small style="white-space: nowrap;">3 days ago</small>
                                             </div>
-                                            <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                            <small>And some small print.</small>
                                         </div>
                                     </div>
                                 </a>
@@ -230,7 +212,7 @@
 
                             <li>
                                 <img class="dropdown-item overflow-hidden p-2 rounded-circle"
-                                    src="https://picsum.photos/200/200/?random=10" width="150" height="150">
+                                    src="https://picsum.photos/200/200/?random=10">
                             </li>
                             <li>
                                 <span class="dropdown-item-text justify-content-center d-flex fs-5">名字</span>
