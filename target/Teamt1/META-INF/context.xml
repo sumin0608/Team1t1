@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Context>
+    
+<!--     jimmy_mySQL -->
+    <Resource name="jdbc/trainer_course" type="javax.sql.DataSource" 
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/trainer_course?serverTimezone=Asia/Taipei"
+		username="root" 
+		password="password"
+		factory="com.zaxxer.hikari.HikariJNDIFactory"
+		minimumIdle="5"
+        maximumPoolSize="10"
+        connectionTimeout="3000"
+		/>
+<!-- 	<Environment name="java.naming.factory.initial" value="org.apache.naming.java.javaURLContextFactory" type="java.lang.String"/> -->
+	
+</Context>
