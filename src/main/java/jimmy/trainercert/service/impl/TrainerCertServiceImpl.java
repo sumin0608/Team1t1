@@ -1,19 +1,38 @@
 package jimmy.trainercert.service.impl;
 
+import java.util.Collections;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import jimmy.trainercert.dao.TrainerCertDao;
 import jimmy.trainercert.dao.impl.TrainerCertDaoImpl;
+import jimmy.trainercert.entity.TrainerCert;
 import jimmy.trainercert.service.TrainerCertService;
-import jimmy.trainercert.vo.TrainerCert;
 
+@Service
 public class TrainerCertServiceImpl implements TrainerCertService {
+
+	@Autowired
 	private TrainerCertDao dao;
 
-	public TrainerCertServiceImpl() {
-		dao = new TrainerCertDaoImpl();
+//	public TrainerCertServiceImpl() {
+//		dao = new TrainerCertDaoImpl();
+//	}
+
+	@Override
+	public List<TrainerCert> getall() {
+		System.out.println("到service成功");
+		if (dao.getAll() != null) {
+			return dao.getAll();
+		} else {
+			return null;
+		}
 	}
 
+	@Transactional
 	@Override
 	public TrainerCert addnew(TrainerCert trainerCert) {
 		if (trainerCert.getCertName() == null || trainerCert.getCertName() == "") {
@@ -44,15 +63,7 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 		return trainerCert;
 	}
 
-	@Override
-	public List<TrainerCert> getall() {
-		if (dao.getAll() != null) {
-			return dao.getAll();
-		} else {
-			return null;
-		}
-	}
-
+	@Transactional
 	@Override
 	public boolean remove(Integer id) {
 		if (dao.deleteTrainerCert(id) > 0) {
@@ -61,6 +72,7 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 		return false;
 	}
 
+	@Transactional
 	@Override
 	public TrainerCert edit(TrainerCert trainerCert) {
 		if (trainerCert.getCertName() == null || trainerCert.getCertName() == "") {
@@ -78,8 +90,9 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 			trainerCert.setMessage("修改失敗，縮寫名未輸入");
 			return trainerCert;
 		}
-		TrainerCert selectout = dao.selectTrainerCertByName(trainerCert.getCertName());
-		if (selectout.getCertName() == trainerCert.getCertName()&&selectout.getEnglishCertName() == trainerCert.getEnglishCertName()) {
+		TrainerCert selectout = dao.ckeckTrainerCertByName(trainerCert.getCertName());
+		if (selectout.getCertName() == trainerCert.getCertName()
+				&& selectout.getEnglishCertName() == trainerCert.getEnglishCertName()) {
 			trainerCert.setSuccessful(false);
 			trainerCert.setMessage("修改失敗，已存在此名稱");
 			return trainerCert;
@@ -93,23 +106,28 @@ public class TrainerCertServiceImpl implements TrainerCertService {
 		return trainerCert;
 	}
 
-	public TrainerCert get(String certName) {
-		TrainerCert trainerCert = dao.selectTrainerCertByName(certName);
-		if (trainerCert != null) {
-			trainerCert.setSuccessful(true);
-			trainerCert.setMessage("搜尋成功!");
-
-			System.out.println(trainerCert);
-		} else {
-			trainerCert = new TrainerCert(); //要new新的，因trainerCert回傳null
+	public List<TrainerCert> get(String certName) {
+		List<TrainerCert> trainerCerts = dao.selectTrainerCertByName(certName);
+		if ((trainerCerts).isEmpty()) {
+			TrainerCert trainerCert = new TrainerCert(); // 要new新的，因trainerCert回傳null
 			trainerCert.setNumber(0);
 			trainerCert.setCertName("none");
 			trainerCert.setEnglishCertName("none");
 			trainerCert.setAbbrName("none");
 			trainerCert.setSuccessful(false);
 			trainerCert.setMessage("搜尋失敗?");
+			trainerCerts.add(trainerCert);
+			System.out.println("service印出搜尋失敗");
+			return trainerCerts;
+		} else {
+			for (TrainerCert trainerCert : trainerCerts) {
+				trainerCert.setSuccessful(true);
+				trainerCert.setMessage("搜尋成功!");
+				System.out.println("service印出" + trainerCert);
+			}
+			return trainerCerts;
 		}
-		return trainerCert;
 	}
-
+	
+	
 }

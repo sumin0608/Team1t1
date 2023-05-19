@@ -2,7 +2,7 @@ package jimmy.trainercert.service;
 
 import java.util.List;
 
-import jimmy.trainercert.vo.TrainerCert;
+import jimmy.trainercert.entity.TrainerCert;
 
 public interface TrainerCertService {
 
@@ -14,5 +14,5 @@ public interface TrainerCertService {
 
 	TrainerCert edit(TrainerCert trainerCert);
 
-	TrainerCert get(String certName);
+	List<TrainerCert> get(String certName);
 }

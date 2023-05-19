@@ -12,16 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import core.util.CommonUtil;
+import jimmy.trainercert.entity.TrainerCert;
 import jimmy.trainercert.service.TrainerCertService;
-import jimmy.trainercert.dao.impl.TrainerCertDaoImpl;
 import jimmy.trainercert.service.impl.TrainerCertServiceImpl;
-import jimmy.trainercert.vo.TrainerCert;
 
 @WebServlet("/getAllTrainerCertServlet")
 public class GetAllTrainerCertServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-//	private TrainerCertDaoImpl trainerCertDAO = new TrainerCertDaoImpl();
-	public static final TrainerCertService SERVICE = new TrainerCertServiceImpl();
+	public static TrainerCertService service = new TrainerCertServiceImpl();
+	
+	public void init() throws ServletException {
+		service = CommonUtil.getBean(getServletContext(), TrainerCertService.class);
+	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
@@ -44,7 +47,7 @@ public class GetAllTrainerCertServlet extends HttpServlet{
 //	}
 
 		try {
-			List<TrainerCert> getallList = SERVICE.getall();
+			List<TrainerCert> getallList = service.getall();
 
 			System.out.println("迴圈每筆列出");
 			for (TrainerCert cert : getallList) {
