@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstarp跟共用css內容========================================= -->
+    <link href="../lib/css/styles.css" rel="stylesheet" />
+    <link href="../lib/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-top: 1%;">
+        <div>
+            <button class="btn" id="getall" style="background-color:rgba(66, 184, 131, 1)">查看全部</button>
+            <button class="btn" id="getsingle" style="background-color:#bdbebd;margin-left: 2%;">搜尋:</button>
+            <div style="display: inline-block;">
+                <input class="form-control" id="searchname" type="search" placeholder="搜尋證照中文名..." aria-label="Search"
+                    role="button">
+                </input>
+            </div>
+            <div style="display: inline-block; margin-left: 2%;"><span>狀態:</span></div>
+            <div id="result" style="display: inline-block; margin-left: 2%;color: red;"></div>
+        </div>
+        <br>
+        <table id="courseList0" class="table">
+            <thead style="background-color:rgba(66, 184, 131, 1)">
+                <tr>
+                    <th>編號</th>
+                    <th>證照中文名</th>
+                    <th>證照英文名</th>
+                    <th>證照英文縮寫</th>
+                    <th colspan="2">修改</th>
+                </tr>
+                <tr style="color: red;background-color:#bdbebd">
+                    <td>number</td>
+                    <td>certName</td>
+                    <td>englishCertName</td>
+                    <td>abbrName</td>
+                    <td colspan="2"></td>
+                </tr>
+            </thead>
+            <!-- 這裡將用Ajax取得課程列表後再填入 -->
+            <tbody id="courseList">
+                <tr>
+                    <td class="number_td">n</td>
+                    <td class="certName_td">EX:张三</td>
+                    <td class="englishCertName_td">25</td>
+                    <td class="abbrName_td">北京</td>
+                    <!-- <td><button class="btn btn-primary alterbtn">修改</button></td>
+                    <td><button class="btn btn-danger deletebtn">刪除</button></td> -->
+                </tr>
+                <!-- <tr class="table_update -none">
+                    <td class="number_update">${certItem.number}</td>
+                    <td class="certName_update"><input type='text' class='task_update' placeholder='請輸入更新…' /></td>
+                    <td class="englishCertName_update"><input type='text' class='task_update' placeholder='請輸入更新…' />
+                    </td>
+                    <td class="abbrName_update"><input type='text' class='task_update' placeholder='請輸入更新…' /></td>
+                    <td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+
+        <!-- 引入所需函式庫 -->
+        <script src="../lib/js/bootstrap.bundle.min.js"></script>
+        <script src="../lib/js/popper.min.js"></script>
+        <script src="../lib/vendors/jquery/jquery-3.6.4.min.js"></script>
+        <!-- ================================================================= -->
+        <script>
+            $(document).ready(function () {
+                $("#getall").on("click", function (event) {
+                    event.preventDefault(); // 防止表單提交
+                    // 使用Ajax取得課程列表
+                    $.ajax({
+                        url: "/Team1/allCourseServlet",
+                        type: "GET",
+                        dataType: "json",
+                        success: function (resp) {
+                            console.log("resp>>" + resp);
+
+                            $("#result").empty().append("成功");
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error: " + xhr.responseText);
+                        }
+                    });
+                });
+
+
+                $("#getsingle").on('click', function (e) {
+                    e.preventDefault();
+                    let word = $("#searchname").val();
+                    console.log("關鍵字=" + word);
+
+                    $.ajax({
+                        url: "/Team1/oneCourseServlet",
+                        type: "GET",
+                        data: { creator: word },
+                        success: function (resp) {
+                            console.log("resp>>" + resp);
+                            const tostring = JSON.stringify(resp.message);//要轉字串才能
+                            const tostring4 = JSON.stringify(resp.successful);//要轉字串才能
+                            console.log("message>>" + tostring);
+                            console.log("message4>>" + tostring4);
+                            $("#result").empty().append(tostring);
+                            let tableData = '';
+                            let certItem = resp;
+                            // if (tostring4 === true) {
+                            //     tableData += `<tr class="table_tr">`;
+                            //     tableData += `<td class="number_td">${certItem.number}</td>`;
+                            //     tableData += `<td class="certName_td"> ${certItem.certName}</td >`;
+                            //     tableData += `<td class="englishCertName_td"> ${certItem.englishCertName}</td > `;
+                            //     tableData += `<td class="abbrName_td"> ${certItem.abbrName}</td > `;
+                            //     tableData += `<td><button class="btn btn-primary alterbtn">修改</button></td > `;
+                            //     tableData += `<td><button class="btn btn-danger deletebtn">刪除</button></td > `;
+                            //     tableData += `</tr>`;
+                            //     tableData += `<tr class="table_update -none">`;
+                            //     tableData += `<td class="number_update">${certItem.number}</td>`;
+                            //     tableData += `<td><input type='text' class='certName_updatet' placeholder='請輸入更新…'/></td > `;
+                            //     tableData += `<td><input type='text' class='englishCertName_updatet' placeholder='請輸入更新…'/></td > `;
+                            //     tableData += `<td class="abbrName_update"><input type='text' class='abbrName_updatet' placeholder='請輸入更新…'/></td > `;
+                            //     tableData += `<td colspan="2"><button class="btn btn-primary sendbtn">送出修改</button></td > `;
+                            //     tableData += `</tr>`;
+                            // }
+                            // else {
+                            //     tableData += `<tr><td class=">查無此名稱</td ></tr>`
+                            // }
+                            // $("#courseList").empty().append(tableData);
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error: " + xhr.responseText);
+                        }
+                    });
+                });
+
+            });
+        </script>
+</body>
+
+</html>
