@@ -2,12 +2,12 @@ package jimmy.trainercert.dao;
 
 import java.util.List;
 
-import jimmy.trainercert.vo.TrainerCert;
+import jimmy.trainercert.entity.TrainerCert;
 
 public interface TrainerCertDao {
 
 	public List<TrainerCert> getAll();
-	public TrainerCert selectTrainerCertByName(String cert_name);
+	public List<TrainerCert> selectTrainerCertByName(String cert_name);
 	public TrainerCert ckeckTrainerCertByName(String cert_name);
 //	public TrainerCert selectTrainerCertById(Integer id);
 	

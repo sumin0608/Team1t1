@@ -15,14 +15,14 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!-- java組態設定，不寫預設就是xml組態。IoC容器 -->
+	<!-- (Java based)組態設定，不寫預設就是xml組態。IoC容器 -->
 	<context-param>
 		<param-name>contextClass</param-name>
 		<param-value>
             org.springframework.web.context.support.AnnotationConfigWebApplicationContext
         </param-value>
 	</context-param>
-	<!-- java組態設定，不寫預設就是xml組態。AppConfig檔案 -->
+	<!-- (Java based)組態設定，不寫預設就是xml組態。AppConfig檔案 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>core.config.AppConfig</param-value>

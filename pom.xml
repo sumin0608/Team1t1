@@ -2,7 +2,9 @@
 <!-- =========================================================== -->
 <!-- WebApp for Servlet 3.1 -->
 <!-- =========================================================== -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tw.idv.tha101</groupId>
 	<artifactId>Teamt1</artifactId>
@@ -16,39 +18,51 @@
 	</properties>
 
 	<dependencies>
-		<!--	自訂內容========================-->
+		<!-- 自訂內容======================== -->
+		<!-- 用jdbc -->
 		<dependency>
-			<!--  用aop -->
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+		<dependency>
+			<!-- 用aop -->
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<version>${spring-version}</version>
 		</dependency>
-		<!--  為了託管hibernate -->
+<!-- 		用來 transaction management -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+		<!-- 為了託管hibernate -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${spring-version}</version>
 		</dependency>
 		<dependency>
-			<!--  為了支援web -->
+			<!-- 為了支援web -->
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${spring-version}</version>
 		</dependency>
-		<!--  基本framework -->
+		<!-- 基本framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring-version}</version>
 		</dependency>
-		<!--  連接池 -->
+		<!-- 連接池 -->
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
 			<version>5.0.1</version>
 		</dependency>
 
-		<!--	自訂內容-->
+		<!-- 自訂內容 -->
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
