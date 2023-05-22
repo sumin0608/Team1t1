@@ -14,7 +14,7 @@
     <style>
        
 
-.totalcolor1{
+       .totalcolor1{
   background: linear-gradient(
     180deg,
     rgb(237, 242, 240) 0%,
@@ -82,14 +82,41 @@ body{
    
 
 }
+div img {
+
+ 
+  position: absolute;   
+  width: auto;
+  max-height: 100%;
+  
+  
+}
+div{
+    position: relative;
+  
+  
+}
 
 .aaa{
-    overflow: hidden;
+    display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  text-align: center; /* 对齐文本 */
 }
-.bb{
-    max-width: 100%;
-      height: auto;
-}
+.color{
+    background-color: rgb(248, 247, 247);
+    text-align: center;
+    height: 50px;
+  border-bottom: 0px;  
+ font-size: 20px ;
+ font-weight: bold;
+ text-align: center;
+
+    }
+    .reportspan{
+        right: 60px;
+    }
+
     </style>
     
     </head>
@@ -143,12 +170,14 @@ body{
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="">檢舉會員<span class="msg-counter">7</span></a>
-                                    <a class="nav-link" href="">檢舉活動<span class="msg-counter">7</span></a>
-                                    <a class="nav-link" href="">檢舉文章<span class="msg-counter">7</span></a>
-                                    <a class="nav-link" href="">檢舉課程<span class="msg-counter">7</span></a>
+                                    
+                                    <a class="nav-link" href="">檢舉會員<span class=" msg-counter reportspan">7</span></a>
+                                    <a class="nav-link" href="">檢舉活動<span class="msg-counter reportspan">7</span></a>
+                                    <a class="nav-link" href="">檢舉文章<span class="msg-counter reportspan">7</span></a>
+                                    <a class="nav-link" href="">檢舉課程<span class="msg-counter reportspan">7</span></a>
                                 </nav>
                             </div>
+
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutss" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="bi bi-chat-left-dots-fill"></i></div>
@@ -192,10 +221,23 @@ body{
                                 </nav>
                             </div>
 
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsssss" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="bi bi-cart-fill"></i></div>
+                               課程
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayoutsssss" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="">課程查詢</a>
+                                    <a class="nav-link" href="">課程xxx</a>
+                                   
+                                </nav>
+                            </div>
+
                            
                         </div>
                     </div>
-                    <!-- <div class="sb-sidenav-footer"  這是nav尾頁留著備用>
+                    <!-- <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                         Start Bootstrap
                     </div> -->
