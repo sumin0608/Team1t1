@@ -68,10 +68,10 @@
         } */
 
         /* 讓上傳照片的按鈕消失 */
-        #photo-dropzone,
+        /* #photo-dropzone,
         .forDhotoDrop {
             display: none;
-        }
+        } */
 
         #previewBox.dragover {
             /* border-color: #aaa; */
@@ -435,11 +435,17 @@
 
                             <!-- ================================================form -----submit ================================================== -->
                             <!-- <form action="aaa.html" method="get" class="row g-3 needs-validation" novalidate> -->
-                            <form action="http://localhost:8081/THA101G1/EventAddServlet" method="post"
-                                enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
-                                <!-- <form action="#" method="post" enctype="multipart/form-data" class="row g-3 needs-validation"
-                    novalidate> -->
+                            <!-- <form action="http://localhost:8081/THA101G1/EventAddServlet" method="post"
+                                enctype="multipart/form-data" class="row g-3 needs-validation" novalidate> -->
 
+                            <!-- <form action="http://localhost:8080/springmvc-exercise/event/create" method="post"
+                                enctype="multipart/form-data" class="row g-3 needs-validation" novalidate> -->
+
+                            <!-- <form action="" method="post" enctype="multipart/form-data" class="row g-3 needs-validation"
+                                novalidate> -->
+                            <!-- <form class="row g-3 needs-validation" novalidate> -->
+
+                            <form id="myForm" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
 
                                 <br>
                                 <h1>創辦活動表單</h1>
@@ -815,7 +821,7 @@
 
             // Preview image function =================zzzz=================
             function readURL(input) {
-                $("#previewBox").attr("restrictChange", true);
+
                 // if (this.files.length > 0) {  多張
                 // ===============================================================
                 // if (input.files && input.files[0]) {  單張
@@ -824,6 +830,7 @@
                 // ========================================================================
                 if (input.files && input.files[0]) {
                     if (input.files[0].type.match('image.*')) {
+                        $("#previewBox").attr("restrictChange", true);
                         var reader = new FileReader();
                         reader.onload = function () {
                             $("#previewBox").html('<img src="' + reader.result + '" class="preview_img">');
@@ -863,6 +870,7 @@
                 $(this).attr("restrictChange", true);
                 // ======================================================
                 var files = e.dataTransfer.files;
+                // console.log(files); //------------------------------<>>>>>>>>>>>>>>>>>>>>>>>>
                 var file = files[0];
                 if (file.type.match('image.*')) {
                     var reader = new FileReader();
@@ -872,7 +880,8 @@
                         $("#previewBox").html('<img src="' + reader.result + '" class="preview_img">');
                         // $('#photo-dropzone').val("aaaa");
                         // $('#photo-dropzone').val(file.name);
-                        $('#photo-dropzone').prop('files', files);;
+                        $('#photo-dropzone').prop('files', files);
+                        sessionStorage.setItem("fileInput", files);
                         // $('#preview-dropzone').val("");
                     };
 
@@ -941,6 +950,22 @@
                                 send_data.maxAttendees = $("#maxAttendees").val();
                                 send_data.paymentMethod = $("#paymentMethod").val();
                                 send_data.description = $("#description").val();
+                                // =======================================================photo filelist session storage test=================================
+                                // send_data.fileList = $('#photo-dropzone').prop('files');
+                                // console.log("ooooo");
+                                // console.log($('#photo-dropzone').prop('files'));
+
+                                // function handleSubmit() {
+                                // const imgPath = document.querySelector('input[type=file]').files[0];
+                                // const reader = new FileReader();
+                                // reader.addEventListener("load", function () {
+                                //     localStorage.setItem("PHOTO", reader.result);
+                                // }, false)
+                                // if (imgPath) {
+                                //     reader.readAsDataURL(imgPath);
+                                // }
+                                // }
+                                // =======================================================photo filelist session storage test=================================
 
                                 console.log(send_data);
 
@@ -951,6 +976,80 @@
 
                                 // 把資料存到session 裡面-先不存到資料庫- 給預覽頁面座使用
                                 sessionStorage.setItem("form_data", JSON.stringify(send_data));
+
+                                // ============================== ajax - insert Event =========
+
+                                // JavaScript code using jQuery library
+                                // ======================test=====================================
+                                // $(document).ready(function () {
+                                //     $('#myForm').submit(function (event) {
+
+                                event.preventDefault(); // Prevent default form submission
+
+                                // Create FormData object and append form data
+                                // var formData = new FormData(this);
+                                // formData.append('action', 'save'); // Add additional data if needed
+
+                                var form = $('#myForm')[0];
+                                var formData = new FormData(form);
+                                // Send Ajax request
+                                console.log(formData);   // <<<<<<<<<<<<<<<<<<<<<<<<<<< test >>>>>>>>>>>>>>>>>>>>
+
+                                $.ajax({
+                                    url: 'http://localhost:8081/THA101G1/event/photo', // Replace with the actual servlet URL
+                                    // url: "http://localhost:8080/springmvc-exercise/event/create",
+                                    type: 'POST',
+                                    data: formData,
+                                    processData: false,
+                                    contentType: false,
+                                    dataType: 'json',
+                                    success: function (response) {
+                                        // Handle success response here
+                                        console.log(response);
+                                    },
+                                    error: function (xhr, status, error) {
+                                        // Handle error here
+                                        console.log(xhr.responseText);
+                                    }
+                                });
+                                // ======================test=====================================
+                                //         });
+                                // });
+
+                                // =======================================================browser-sessionstorage-share-between-tabs=================================
+                                // https://stackoverflow.com/questions/20325763/browser-sessionstorage-share-between-tabs/20325870#20325870
+                                // transfers sessionStorage from one tab to another
+                                // var sessionStorage_transfer = function (event) {
+                                //     if (!event) { event = window.event; } // ie suq
+                                //     if (!event.newValue) return;          // do nothing if no value to work with
+                                //     if (event.key == 'getSessionStorage') {
+                                //         // another tab asked for the sessionStorage -> send it
+                                //         localStorage.setItem('sessionStorage', JSON.stringify(sessionStorage));
+                                //         // the other tab should now have it, so we're done with it.
+                                //         localStorage.removeItem('sessionStorage'); // <- could do short timeout as well.
+                                //     } else if (event.key == 'sessionStorage' && !sessionStorage.length) {
+                                //         // another tab sent data <- get it
+                                //         var data = JSON.parse(event.newValue);
+                                //         for (var key in data) {
+                                //             sessionStorage.setItem(key, data[key]);
+                                //         }
+                                //     }
+                                // };
+
+                                // // listen for changes to localStorage
+                                // if (window.addEventListener) {
+                                //     window.addEventListener("storage", sessionStorage_transfer, false);
+                                // } else {
+                                //     window.attachEvent("onstorage", sessionStorage_transfer);
+                                // };
+
+
+                                // // Ask other tabs for session storage (this is ONLY to trigger event)
+                                // if (!sessionStorage.length) {
+                                //     localStorage.setItem('getSessionStorage', 'foobar');
+                                //     localStorage.removeItem('getSessionStorage', 'foobar');
+                                // };
+                                // =======================================================browser-sessionstorage-share-between-tabs=================================
                             };
 
                             form.classList.add('was-validated')
@@ -961,6 +1060,33 @@
 
             })()
             // =========================== 資料送出 ========================= //
+
+            const data = sessionStorage.getItem('form_data');
+            const sessionFormData = JSON.parse(data);   //sessionFormData
+
+            // ============ photo -> are not processing due to troublesome
+            // $("#previewBox").html('<img src="' + sessionFormData.img_base64 + '" class="preview_img">');     // imgElement.src = 'data:image/png;base64,' + base64Data;
+            // $("#photo-dropzone").val(sessionFormData.photo_dropzone);
+            // $('#photo-dropzone').prop('files', sessionFormData.photo_dropzone);;
+
+            // $("#event_name").val(sessionFormData.event_name);
+            // $("#categoryId").val(sessionFormData.categoryId);
+            // $("#city").val(sessionFormData.city);
+            // $("#district").val(sessionFormData.district);
+            // $("#location").val(sessionFormData.location);
+            // $("#address").val(sessionFormData.address);
+            // $("#price").val(sessionFormData.price);
+            // $("#eventDate").val(sessionFormData.eventDate);
+            // $("#startTime").val(sessionFormData.startTime);
+            // $("#lastVerifyDate").val(sessionFormData.lastVerifyDate);
+            // $("#lastVerifyTime").val(sessionFormData.lastVerifyTime);
+            // $("#maxAttendees").val(sessionFormData.maxAttendees);
+            // $("#paymentMethod").val(sessionFormData.paymentMethod);
+            // $("#description").val(sessionFormData.description);
+
+
+
+
 
         }); //Load ====
 
