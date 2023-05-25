@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>論壇首頁</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .search-bar {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .search-bar input[type="text"] {
+        padding: 5px;
+        width: 200px;
+      }
+
+      .article-container {
+        margin: 0 auto;
+        width: 66%;
+      }
+
+      .article {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+      }
+
+      .article h2 {
+        margin: 0;
+        color: #666;
+      }
+
+      .article .author {
+        color: #999;
+      }
+
+      .article .likes {
+        color: #333;
+        font-weight: bold;
+      }
+
+      .current-keyword {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>論壇首頁</h1>
+
+    <div class="search-bar">
+      <input type="text" placeholder="輸入關鍵字搜尋" />
+    </div>
+
+    <div class="current-keyword">目前搜尋的關鍵字：無</div>
+
+    <div class="article-container">
+      <div class="article">
+        <h2>文章標題 1</h2>
+        <p class="author">作者：John Doe</p>
+        <p class="likes">按讚數：100</p>
+      </div>
+
+      <div class="article">
+        <h2>文章標題 2</h2>
+        <p class="author">作者：Jane Smith</p>
+        <p class="likes">按讚數：50</p>
+      </div>
+
+      <div class="article">
+        <h2>文章標題 3</h2>
+        <p class="author">作者：David Johnson</p>
+        <p class="likes">按讚數：75</p>
+      </div>
+
+      <!-- 依此類推，加入更多文章 -->
+    </div>
+  </body>
+</html>

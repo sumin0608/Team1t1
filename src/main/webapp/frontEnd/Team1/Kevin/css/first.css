@@ -1,0 +1,139 @@
+body{
+    margin-top:20px;
+    background:#eee;
+    color: #708090;
+}
+.icon-1x {
+    font-size: 24px !important;
+}
+a{
+    text-decoration:none;    
+}
+.text-primary, a.text-primary:focus, a.text-primary:hover {
+    color: #00ADBB!important;
+}
+.text-black, .text-hover-black:hover {
+    color: #000 !important;
+}
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #efe9e7;
+  }
+  a {
+    text-decoration: none;
+    color: #3d1101;
+  }
+  .wrap {
+    max-width: 960px;
+    margin: 20px auto 0 auto;
+    height: auto;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #efe9e7;
+  }
+  a {
+    text-decoration: none;
+    color: #3d1101;
+  }
+  .wrap {
+    max-width: 960px;
+    margin: 20px auto 0 auto;
+    height: auto;
+  }
+  .search {
+    position: relative;
+    width: 80%;
+    float: left;
+  }
+  .search-bar {
+    width: 100%;
+    height: 32px;
+    font-size: 20px;
+    border: 3px solid #3d1101;
+    background-color: #efe9e7;
+  }
+  .search-btn {
+    width: 36px;
+    height: 32px;
+    background-color: #3d1101;
+    color: #efe9e7;
+    outline: none;
+    border: 2px solid #3d1101;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .search-cart li {
+    float: left;
+    margin-left: 17px;
+    padding-top: 5px 0;
+    line-height: 32px;
+  }
+  .search-cart li a {
+    font-size: 16px;
+  }
+  
+  .pay {
+    padding-right: 10px;
+    border-right: 1px solid #3d1101;
+  }
+  
+  .search {
+    position: relative;
+    width: 80%;
+    float: left;
+  }
+  .search-bar {
+    width: 100%;
+    height: 32px;
+    font-size: 20px;
+    border: 3px solid #3d1101;
+    background-color: #efe9e7;
+  }
+  .search-btn {
+    width: 36px;
+    height: 32px;
+    background-color: #3d1101;
+    color: #efe9e7;
+    outline: none;
+    border: 2px solid #3d1101;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .search-cart li {
+    float: left;
+    margin-left: 17px;
+    padding-top: 5px 0;
+    line-height: 32px;
+  }
+  .search-cart li a {
+    font-size: 16px;
+  }
+
+  /* 論壇首頁四字 */
+  .speak01 {
+    font-size: 2em;
+    color: green;
+    font-weight: bold;
+  }
+  /* 論壇首頁四字 */
+
+  /* 隱藏發表文章鍵 */
+  
+  a.btn.btn-lg.btn-block.btn-success.rounded-0.py-4.mb-3.bg-op-6.roboto-bold {
+    text-indent: -9999px;
+  }
+
+  /* 隱藏發表文章鍵 */

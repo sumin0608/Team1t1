@@ -1,0 +1,55 @@
+  /* 以下為搜尋的css */
+
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  .search-bar {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .search-bar input[type="text"] {
+    padding: 5px;
+    width: 200px;
+  }
+
+  .article-container {
+    margin: 0 auto;
+    width: 66%;
+  }
+
+  .article {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+
+  .article h2 {
+    margin: 0;
+    color: #666;
+  }
+
+  .article .author {
+    color: #999;
+  }
+
+  .article .likes {
+    color: #333;
+    font-weight: bold;
+  }
+
+  .current-keyword {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+
+  /* 以上為搜尋的css */
